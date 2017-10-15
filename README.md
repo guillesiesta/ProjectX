@@ -10,7 +10,6 @@ Un usuario dentro de esta Project X podrá intendar dar sentido resolviendo dive
 
 Para el almacenamiento de los datos se usará [neo4j](https://neo4j.com/). Esta base de datos basada en grafos se desplegará dentro de un servidor de Microsoft Azure. El objetivo, es crear un servidor en el que por cada usuario se almacenarán las distintas historias y pistas para resolverlas. Además, se tendrá que llevar un control a la hora de la interacción entre usuarios.
 
-Una vez montada la infraestructura, para el diseño de la web se usará *python*.
-La libreria *beatutiful soup*, que "une" *python* con *HTML*. 
+Una vez montada la infraestructura, para el diseño de la web se usará *python* se usará libreria *beatutiful soup*, que "une" *python* con *HTML*. 
 
 
