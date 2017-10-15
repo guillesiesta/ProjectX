@@ -3,29 +3,12 @@
 import hunspell
 from storie import Storie
 
-dic = hunspell.HunSpell('dic/Spanish.dic',
-                        'dic/Spanish.aff')
 
 
 def test_setTitle():
     storie = Storie()
     storie.setTitle("Capitán América y los siete enanitos")
     assert storie.title == "Capitán América y los siete enanitos"
-
-
-def test_ortografia():
-    storie = Storie()
-    storie.setTitle("Capitán América y los siete enanos 2 El retorno")
-    split_title = storie.getTitle().split()
-    i = 0
-    size = len(split_title)
-    while i < size:
-        c = split_title[i]
-        u = c.decode('utf8')
-        c2 = u.encode('utf8')
-        assert dic.spell(c2) is True
-        i += 1
-
 
 def test_setStorie():
     storie = Storie()
