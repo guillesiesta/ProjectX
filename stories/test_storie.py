@@ -1,6 +1,4 @@
 # -*- coding: utf-8 -*-
-
-import hunspell
 from storie import Storie
 
 
