@@ -1,5 +1,7 @@
 # ProjectX
 
+[![Build Status](https://travis-ci.org/guillesiesta/ProjectX.svg?branch=master)](https://travis-ci.org/guillesiesta/ProjectX)
+
 ### Descripción del proyecto
 
 Project X es un proyecto profundiza dentro del insólito mundo de las *Dark Stories*. Para aquellos que buscan *stories* únicas y paranormales, esta es su plataforma.
