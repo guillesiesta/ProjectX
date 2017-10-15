@@ -6,7 +6,8 @@ class Storie:
     Titulo
     Storie
     Muy breve Storie
-    3 Pistas iniciales"""
+    3 Pistas iniciales
+    """
 
     def __init__(self, tit="", stor="", sh_stor="", c=["", "", ""]):
         self.title = tit
