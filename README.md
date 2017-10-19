@@ -4,7 +4,7 @@
 
 ### Descripción del proyecto
 
-Project X es un proyecto profundiza dentro del insólito mundo de las *Dark Histories*. Para aquellos que buscan *stories* únicas y paranormales, esta es su plataforma.
+Project X es un proyecto profundiza dentro del insólito mundo de las *Dark Stories*. Para aquellos que buscan *stories* únicas y paranormales, esta es su plataforma.
 
 Un usuario dentro de esta Project X podrá intendar dar sentido resolviendo diversas Dark Stories propuestas por otros usuarios o, incluso, tendrá la posibilidad de manifestar su creatividad proponiendo *stories* propia.
 
