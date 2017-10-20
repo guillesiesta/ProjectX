@@ -8,3 +8,7 @@ class AllCluesFull(Exception):
 		self.mensaje = "Ya se han añadido todas las pistas"
 		self.errorCode = -1
 
+class IndexOfClueNotValid(Exception):
+	def __init__(self):
+		self.mensaje = "Indice no válido"
+		self.errorCode = -2
