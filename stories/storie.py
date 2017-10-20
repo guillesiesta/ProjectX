@@ -3,10 +3,10 @@ class Storie:
     """
     Clase Storie.
     Clase para crear la dark storie, constara de:
-    Titulo
-    Storie
-    Muy breve Storie
-    3 Pistas iniciales
+     - Titulo
+     - Storie
+     - Muy breve Storie
+     - 3 Pistas iniciales
     """
 
     def __init__(self, tit="", stor="", sh_stor="", c=["", "", ""]):
