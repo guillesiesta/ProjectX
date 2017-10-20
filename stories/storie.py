@@ -38,10 +38,10 @@ class Storie:
         if(num < self.maxClues):
             self.clue[num] = t
         else:
-            return -1   #TODO: Levantar la nueva excepcion "AllCluesFull"
+            return -1   #TODO: Levantar la excepcion "AllCluesFull"
 
     def getClue(self, num):
-        if(num < self.maxClues):
+        if(num < self.maxClues): 
             return self.clue[num]
         else:
-            return -1
+            return -1 # TODO: Levantar la excepcion "IndexOfClueNotValid"
