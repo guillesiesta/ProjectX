@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 class Storie:
-    """
+    """    
     Clase Storie.
     Clase para crear la dark storie, constara de:
      - Titulo
@@ -13,7 +13,8 @@ class Storie:
         self.title = tit
         self.storie = stor
         self.sh_storie = sh_stor
-        self.clue = [c[0], c[1], c[2]]
+        self.clue = [c[0], c[1], c[2]] #TODO: ajustar esto para que dependa del atributo maxClues
+        self.maxClues = 3;
 
     def setTitle(self, t):
         self.title = t
@@ -34,13 +35,13 @@ class Storie:
         return self.sh_storie
 
     def setClue(self, num, t):
-        if(num < 3):
+        if(num < self.maxClues):
             self.clue[num] = t
         else:
-            return -1
+            return -1   #TODO: Levantar la nueva excepcion "AllCluesFull"
 
     def getClue(self, num):
-        if(num < 3):
+        if(num < self.maxClues):
             return self.clue[num]
         else:
             return -1
