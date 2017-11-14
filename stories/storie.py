@@ -14,7 +14,7 @@ class Storie:
         self.storie = stor
         self.sh_storie = sh_stor
         self.clue = [c[0], c[1], c[2]]
-        self.maxClues = 3
+        self.maxClues = 3  # pistas
 
     def setTitle(self, t):
         self.title = t
