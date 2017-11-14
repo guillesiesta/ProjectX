@@ -1,2 +1,2 @@
 worker: cd storie && python storie_flask_app.py
-web: gunicorn web:app --log-file - 
+web: gunicorn storie_flask_app:app --log-file - 
