@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+import pytest
 from storie import Storie
 from storie_flask_app import app
 
@@ -7,6 +8,7 @@ def test_setTitle():
     storie = Storie()
     storie.setTitle("Capitán América y los siete enanitos")
     assert storie.title == "Capitán América y los siete enanitos"
+
 
 def test_setStorie():
     storie = Storie()
@@ -30,3 +32,5 @@ def test_setClue():
     assert storie.getClue(2) == "Pista3"
     assert storie.getClue(8) == -1
     assert storie.setClue(8, "Pistaca") == -1
+
+# Añadir tests para flask
