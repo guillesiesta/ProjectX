@@ -15,4 +15,4 @@ Para el almacenamiento de los datos se usará [neo4j](https://neo4j.com/). Esta 
 
 Una vez montada la infraestructura, para el diseño de la web se usará *python* se usará libreria *beatutiful soup*, que "une" *python* con *HTML*.
 
-Despliegue [https://projectxguillesiesta.herokuapp.com/](https://projectxguillesiesta.herokuapp.com/)
+Despliegue https://projectxguillesiesta.herokuapp.com/
