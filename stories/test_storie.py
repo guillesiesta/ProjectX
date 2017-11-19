@@ -43,6 +43,6 @@ def test_jsonify_status_ok():
 	apps = status()	
 	ruta=urllib.urlopen(url)
 	data = jsonify.load(ruta)
-	assert apps.status(data) == "OK"
+	assert apps.data == "OK"
 
 # Añadir tests para flask
