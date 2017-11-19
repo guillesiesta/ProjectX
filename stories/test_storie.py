@@ -40,7 +40,7 @@ url="https://projectxguillesiesta.herokuapp.com/"
 def test_pagina_recibida():
 	apps = app()
 	ruta=urllib.urlopen(url)
-	assert apps.status(ruta.getcode(),200)
+	assert apps.status(ruta) == "OK"
 
 
 # Añadir tests para flask
