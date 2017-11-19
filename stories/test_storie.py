@@ -41,10 +41,6 @@ def test_pagina_recibida():
 	apps = app()
 	ruta=urllib.urlopen(url)
 	assert apps.status(ruta.getcode(),200)
-def test_json_status_ok():
-	apps = app()	
-	ruta=urllib.urlopen(url)
-	data = json.load(ruta)
-	assert apps.(ruta.data["status"]=="OK")
+
 
 # Añadir tests para flask
