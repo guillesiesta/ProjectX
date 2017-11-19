@@ -38,10 +38,10 @@ def test_setClue():
 
 url="https://projectxguillesiesta.herokuapp.com/"
 
-def test_json_status_ok():
+def test_jsonify_status_ok():
 	apps = app()	
 	ruta=urllib.urlopen(url)
-	data = json.load(ruta)
+	data = jsonify.load(ruta)
 	assert apps.status(data) == "OK"
 
 # Añadir tests para flask
