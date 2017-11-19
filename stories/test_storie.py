@@ -42,6 +42,6 @@ def test_json_status_ok():
 	apps = app()	
 	ruta=urllib.urlopen(url)
 	data = json.load(ruta)
-	assert apps.(data) == "OK"
+	assert apps.status(data) == "OK"
 
 # Añadir tests para flask
