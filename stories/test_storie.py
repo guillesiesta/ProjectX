@@ -36,14 +36,13 @@ def test_setClue():
     assert storie.getClue(8) == -1
     assert storie.setClue(8, "Pistaca") == -1
 
-def test_status(unittest.TestCase):
-    	url="https://projectxguillesiesta.herokuapp.com/"
-	def test_pagina_recibida(self):
-		ruta=urllib.urlopen(self.url)
-		self.assertEqual(ruta.getcode(),200)
-	def test_json_status_ok(self):
-		ruta=urllib.urlopen(self.url)
-		data = json.load(ruta)
-		self.assertEqual(data["status"],"OK")
+url="https://projectxguillesiesta.herokuapp.com/"
+def test_pagina_recibida(self):
+	ruta=urllib.urlopen(self.url)
+	self.assertEqual(ruta.getcode(),200)
+def test_json_status_ok(self):
+	ruta=urllib.urlopen(self.url)
+	data = json.load(ruta)
+	self.assertEqual(data["status"],"OK")
 
 # Añadir tests para flask
