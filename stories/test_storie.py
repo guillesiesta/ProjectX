@@ -37,10 +37,11 @@ def test_setClue():
     assert storie.setClue(8, "Pistaca") == -1
 
 url="https://projectxguillesiesta.herokuapp.com/"
-def test_pagina_recibida():
-	apps = app()
-	ruta=urllib.urlopen(url)
-	assert apps.status(ruta) == "OK"
 
+def test_json_status_ok():
+	apps = app()	
+	ruta=urllib.urlopen(url)
+	data = json.load(ruta)
+	assert apps.(data) == "OK"
 
 # Añadir tests para flask
