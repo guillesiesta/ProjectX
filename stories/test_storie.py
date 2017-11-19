@@ -38,11 +38,13 @@ def test_setClue():
 
 url="https://projectxguillesiesta.herokuapp.com/"
 def test_pagina_recibida():
+	apps = app()
 	ruta=urllib.urlopen(url)
-	assertEqual(ruta.getcode(),200)
+	apps.assertEqual(ruta.getcode(),200)
 def test_json_status_ok():
+	apps = app()	
 	ruta=urllib.urlopen(url)
 	data = json.load(ruta)
-	assertEqual(data["status"],"OK")
+	apps.assertEqual(data["status"],"OK")
 
 # Añadir tests para flask
