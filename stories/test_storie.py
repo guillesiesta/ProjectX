@@ -37,11 +37,11 @@ def test_setClue():
     assert storie.setClue(8, "Pistaca") == -1
 
 url="https://projectxguillesiesta.herokuapp.com/"
-def test_pagina_recibida(self):
-	ruta=urllib.urlopen(self.url)
+def test_pagina_recibida():
+	ruta=urllib.urlopen(url)
 	self.assertEqual(ruta.getcode(),200)
-def test_json_status_ok(self):
-	ruta=urllib.urlopen(self.url)
+def test_json_status_ok():
+	ruta=urllib.urlopen(url)
 	data = json.load(ruta)
 	self.assertEqual(data["status"],"OK")
 
