@@ -15,7 +15,7 @@ Para el almacenamiento de los datos se usará [neo4j](https://neo4j.com/). Esta 
 
 Una vez montada la infraestructura, para el diseño de la web se usará *python* se usará libreria *beatutiful soup*, que "une" *python* con *HTML*.
 
-### Despliegue en Heroku 
+### Despliegue en Heroku
 
 Despliegue https://projectxguillesiesta.herokuapp.com/
 
@@ -31,6 +31,4 @@ Descargo no: npm install -g now
 
 Me voy a la carpeta donde tengo mi proyecto y ejecuto: now --public
 
-Contenedor:  https://projectx-ppcjlcvsoh.now.sh/
-
-
+Contenedor: https://projectx-ppcjlcvsoh.now.sh/
