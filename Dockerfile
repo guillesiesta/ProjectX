@@ -1,6 +1,7 @@
 FROM python:2
 MAINTAINER guillesiesta
 
+
 RUN apt-get update && apt-get install -y git
 
 COPY . .
