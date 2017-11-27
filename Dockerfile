@@ -1,9 +1,6 @@
 FROM ubuntu:16.04
 MAINTAINER guillesiesta
 
-
-
-RUN apt-get update
 RUN apt-get install -y python-setuptools
 RUN apt-get install -y python-dev
 RUN apt-get install -y build-essential
