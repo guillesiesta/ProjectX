@@ -1,7 +1,7 @@
 FROM ubuntu:16.04
 MAINTAINER guillesiesta
 
-RUN apt-get install git
+RUN apt-get update && apt-get install -y git
 
 COPY . .
 RUN pip install -r requirements.txt
