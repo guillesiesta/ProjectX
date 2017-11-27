@@ -15,4 +15,22 @@ Para el almacenamiento de los datos se usará [neo4j](https://neo4j.com/). Esta 
 
 Una vez montada la infraestructura, para el diseño de la web se usará *python* se usará libreria *beatutiful soup*, que "une" *python* con *HTML*.
 
+### Despliegue en Heroku 
+
 Despliegue https://projectxguillesiesta.herokuapp.com/
+
+### Despliegue en Docker
+
+[Enlace a DockerHub](https://hub.docker.com/r/guillesiesta/projectx/)
+
+### Despliegue en Zeit
+
+Instalo [nmv](https://www.liquidweb.com/kb/how-to-install-nvm-node-version-manager-for-node-js-on-ubuntu-12-04-lts/)
+
+Descargo no: npm install -g now
+
+Me voy a la carpeta donde tengo mi proyecto y ejecuto: now --public
+
+Contenedor:  https://projectx-ppcjlcvsoh.now.sh/
+
+
