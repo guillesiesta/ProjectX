@@ -36,7 +36,7 @@ Despliegue https://projectxguillesiesta.herokuapp.com/
 
 Instalo [nvm](https://www.liquidweb.com/kb/how-to-install-nvm-node-version-manager-for-node-js-on-ubuntu-12-04-lts/)
 
-Descargo no: npm install -g now
+Descargo now: npm install -g now
 
 Me voy a la carpeta donde tengo mi proyecto y ejecuto: now --public
 
