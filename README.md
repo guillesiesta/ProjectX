@@ -17,15 +17,24 @@ Una vez montada la infraestructura, para el diseño de la web se usará *python*
 
 ### Despliegue en Heroku
 
+Nos abrimos cuenta en Heroku, y conectamos con nuestro github.
+
 Despliegue https://projectxguillesiesta.herokuapp.com/
 
 ### Despliegue en Docker
+
+![docker](imgs/iv.png)
+![docker](imgs/iv2.png)
+![docker](imgs/dockerhub_success.png)
+![docker](imgs/clouddocker_linked.png)
+![docker](imgs/cloud_linked_2.png)
+![docker](imgs/linked_cloud_3.png)
 
 [Enlace a DockerHub](https://hub.docker.com/r/guillesiesta/projectx/)
 
 ### Despliegue en Zeit
 
-Instalo [nmv](https://www.liquidweb.com/kb/how-to-install-nvm-node-version-manager-for-node-js-on-ubuntu-12-04-lts/)
+Instalo [nvm](https://www.liquidweb.com/kb/how-to-install-nvm-node-version-manager-for-node-js-on-ubuntu-12-04-lts/)
 
 Descargo no: npm install -g now
 
