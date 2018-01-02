@@ -32,6 +32,9 @@ Despliegue https://projectxguillesiesta.herokuapp.com/
 
 [Enlace a DockerHub](https://hub.docker.com/r/guillesiesta/projectx/)
 
+Enlace del repositorio en Docker Hub:  https://hub.docker.com/r/guillesiesta/projectx/
+
+
 ### Despliegue en Zeit
 
 Instalo [nvm](https://www.liquidweb.com/kb/how-to-install-nvm-node-version-manager-for-node-js-on-ubuntu-12-04-lts/)
