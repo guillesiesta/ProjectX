@@ -69,4 +69,23 @@ Despliegue https://projectx-iv.azurewebsites.net/
 
 La aplicación la desplegué en Azure. Usaré Vagrant como herramienta para la creación de la máquina virtual dónde se alojará mi aplicación. Para el aprovisionamiento usaré Ansible y Fabric para instalarla y ponerla en ejecución.
 
+Instalamos [vagrant y azure-cli](https://github.com/Azure/vagrant-azure) siguiendo este tutorial. Muy importante tener la última versión de vagrant instalada.
+Instalamos el [plugin de azure en vagrant](https://github.com/softwaresaved/vagrant-azure-recomp) (previamente para linux necesitamos ejecutar npm install azure-cli -g) siguiendo este tutorial.
 
+Archivo [Varantfile]()
+Para ansible usamos archivo [var.yml]() y [playbook.yml]()
+
+Para crear la máquina virtual
+
+vagrant up --provider=azure
+
+![azure](imgs/azure4.png)
+
+Abrimos puerto 80 de la máquina:
+
+![azure](imgs/azure5.png)
+
+
+Para el despliegue voy a usar Fabric
+
+Aquí el archivo [fabfile.py]()
