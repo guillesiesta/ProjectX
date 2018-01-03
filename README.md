@@ -65,4 +65,8 @@ Pasos:
 
 Despliegue https://projectx-iv.azurewebsites.net/
 
+### Despliegue en un IaaS
+
+La aplicación la desplegué en Azure. Usaré Vagrant como herramienta para la creación de la máquina virtual dónde se alojará mi aplicación. Para el aprovisionamiento usaré Ansible y Fabric para instalarla y ponerla en ejecución.
+
 
