@@ -3,7 +3,8 @@
 
 Vagrant.configure('2') do |config|
   config.vm.box = 'azure'
-  config.vm.box_url = 'https://github.com/msopentech/vagrant-azure/raw/master/dummy.box' #Caja base vacía
+  #config.vm.box_url = 'https://github.com/msopentech/vagrant-azure/raw/master/dummy.box' #Caja base vacía
+  config.vm.box_url = 'https://github.com/msopentech/vagrant-azure/raw/v2.0/dummy.box'
   config.vm.network "public_network" 
   config.vm.hostname = "localhost"
   config.vm.network "forwarded_port", guest: 80, host: 80
@@ -25,12 +26,9 @@ Vagrant.configure('2') do |config|
   end
 
   # Provisionar con ansible
-  config.vm.provision "ansible" do |ansible|
-    ansible.sudo = true
-    ansible.playbook = "./playbook.yml"
-    ansible.verbose = "-vvvv"
-
-    ansible.host_key_checking = false
+  # configuration of ansible
+  config.vm.provision :ansible do |ansible|
+    	ansible.playbook = "~/provision/playbook.yml"
   end
 
 end
