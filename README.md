@@ -44,3 +44,25 @@ Descargo now: npm install -g now
 Me voy a la carpeta donde tengo mi proyecto y ejecuto: now --public
 
 Contenedor: https://projectx-ppcjlcvsoh.now.sh/
+
+### Despliegue en Azure
+
+Gracias al cun proporcionado por el profesor he podido desplegar el proyecto correctamente. 
+
+Pasos:
+
+1.- Crear una aplicación basada en linux
+
+![azure](imgs/azure1.png)
+
+2.- Una vez creada enlazamos con nuestra imagen de DockerHub
+
+![azure](imgs/azure2.png)
+
+3.- Si todo funciona correctamente obtendremos lo siguiente:
+
+![azure](imgs/azure3.png)
+
+Despliegue https://projectx-iv.azurewebsites.net/
+
+
