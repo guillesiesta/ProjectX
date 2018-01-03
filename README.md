@@ -72,8 +72,13 @@ La aplicación la desplegué en Azure. Usaré Vagrant como herramienta para la c
 Instalamos [vagrant y azure-cli](https://github.com/Azure/vagrant-azure) siguiendo este tutorial. Muy importante tener la última versión de vagrant instalada.
 Instalamos el [plugin de azure en vagrant](https://github.com/softwaresaved/vagrant-azure-recomp) (previamente para linux necesitamos ejecutar npm install azure-cli -g) siguiendo este tutorial.
 
-Archivo [Varantfile]()
-Para ansible usamos archivo [var.yml]() y [playbook.yml]()
+Archivos usados:
+Para Vagrant
+* [Vagrantfile](https://github.com/guillesiesta/ProjectX/blob/master/Vagrantfile)
+
+Para Ansible:
+* [var.yml](https://github.com/guillesiesta/ProjectX/blob/master/var.yml)
+* [playbook.yml](https://github.com/guillesiesta/ProjectX/blob/master/playbook.yml)
 
 Para crear la máquina virtual
 
@@ -85,7 +90,12 @@ Abrimos puerto 80 de la máquina:
 
 ![azure](imgs/azure5.png)
 
+Aquí la máquina virtual final:
+
+![azure](imgs/maquinavirtual1.png)
 
 Para el despliegue voy a usar Fabric
 
-Aquí el archivo [fabfile.py]()
+Aquí el archivo [fabfile.py](https://github.com/guillesiesta/ProjectX/blob/master/fabfile.py)
+
+Despliegue final: 40.84.185.124
