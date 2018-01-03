@@ -92,9 +92,11 @@ Abrimos puerto 80 de la máquina:
 
 Aquí la máquina virtual final:
 
-![azure](imgs/maquinavirtual1.png)
+![maquina virtual](imgs/maquinavirtual1_A.png)
 
 Para el despliegue voy a usar Fabric
+
+El comando usado es: fab -H usuario@DNS funcion
 
 Aquí el archivo [fabfile.py](https://github.com/guillesiesta/ProjectX/blob/master/fabfile.py)
 
