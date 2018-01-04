@@ -100,4 +100,12 @@ El comando usado es: fab -H usuario@DNS funcion
 
 Aquí el archivo [fabfile.py](https://github.com/guillesiesta/ProjectX/blob/master/fabfile.py)
 
+Aquí podemos ver como funciona cuando vamos a la dirección.
+
+![funciona](imgs/funciona1.png)
+
+Y cuando le añadimos /storie nos aparece un primer acertijo
+
+![funciona](imgs/funciona2.png)
+
 Despliegue final: 40.84.185.124
