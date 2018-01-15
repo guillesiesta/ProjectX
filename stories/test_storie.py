@@ -2,6 +2,10 @@
 import pytest
 from storie import Storie
 from storie_flask_app import app
+from storie_flask_app import status
+import json
+import urllib
+
 
 
 def test_setTitle():
@@ -32,5 +36,13 @@ def test_setClue():
     assert storie.getClue(2) == "Pista3"
     assert storie.getClue(8) == -1
     assert storie.setClue(8, "Pistaca") == -1
+
+url="https://projectxguillesiesta.herokuapp.com/"
+
+def test_jsonify_status_ok():
+	apps = status()	
+	ruta=urllib.urlopen(url)
+	data = jsonify.load(ruta)
+	assert apps.data == "OK"
 
 # Añadir tests para flask
