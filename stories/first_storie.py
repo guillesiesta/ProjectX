@@ -9,3 +9,6 @@ firststorie.setShortStorie("Una mujer solitaria salta desde una azotea de un ras
 firststorie.setClue(0, "La mujer está sola")
 firststorie.setClue(1, "Muere")
 firststorie.setClue(2, "Ve algo")
+firststorie.setEstado(30)
+firststorie.setId(1)
+firststorie.setAutor(46)
