@@ -40,7 +40,11 @@ def login():
         # usuario = {'username': username, 'password': password}
         if(username == fu.nick) and (password == fu.password):
             session['username'] = username
-            return redirect(url_for('index'))
+            # return redirect(url_for('index'))
+            stories = firststorie
+            return render_template('index.html',
+            username= username,
+            storie= firststorie.title)
         else:
             return redirect(url_for('error'))
     else:
@@ -62,11 +66,11 @@ def status():
 @app.route('/storie')
 def storie():
     # tit = Storie.getTitle()
-    return jsonify(solucion= firststorie.storie, pista1= firststorie.clue[0],pista2= firststorie.clue[1],pista3= firststorie.clue[2], storie= firststorie.sh_storie, title=firststorie.title, estado=firststorie.estado, id= firststorie.id, autor=firststorie.autor)
+    return jsonify(solucion= firststorie.storie, pista1= firststorie.clue[0],pista2= firststorie.clue[1],pista3= firststorie.clue[2], storie= firststorie.sh_storie, title=firststorie.title, estado=firststorie.estado)
 
 @app.route('/usuario')
 def usuario():
-    return jsonify(nombre=fu.nombre, apellidos=fu.apellidos, nick=fu.nick, password=fu.password, nivel=fu.nivel, id=fu.id)
+    return jsonify(nombre=fu.nombre, apellidos=fu.apellidos, nick=fu.nick, password=fu.password, nivel=fu.nivel)
 
 if __name__ == "__main__":
     app.secret_key = 'A0Zr98j/3yX R~XHH!jmN]LWX/,?RT'

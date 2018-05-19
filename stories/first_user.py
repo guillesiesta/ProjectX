@@ -3,9 +3,8 @@ from usuario import Usuario
 
 fu = Usuario()
 
-fu.setNombre("Guillermito")
-fu.setApellidos("Muriel Sanches")
-fu.setNick("guillelegend")
+fu.setNombre("Tony")
+fu.setApellidos("Startk Muriel")
+fu.setNick("tonystark")
 fu.setPassword("1234")
 fu.setNivel(0)
-fu.setId(46)

@@ -1,23 +1,33 @@
+from storie import Storie
+from py2neo import Graph, Node, Relationship, authenticate
+import os
+
+
+authenticate("localhost:7474", "neo4j", "root")
+url = os.environ.get('graph.db', 'http://localhost:7474')
+username = os.environ.get('neo4j')
+password = os.environ.get('root')
+
+graph = Graph('localhost:7474/db/data/', username=username, password=password)
+
 # -*- coding: utf-8 -*-
 class Usuario:
     """
     Clase Usuario.
-    Clase para el usuario de la aplicación constara de:
+    Clase para el usuario de la aplicacion constara de:
      - Nombre
      - Apellidos
      - nick
      - password
      - nivel
-     - id
     """
 
-    def __init__(self, nom="", ape="", nic="", pas="", niv="", id=""):
+    def __init__(self, nom="", ape="", nic="", pas="", niv=""):
         self.nombre = nom
         self.apellidos = ape
         self.nick = nic
         self.password = pas
         self.nivel = niv
-        self.id = id
 
     def setNombre(self, t):
         self.nombre = t
@@ -49,8 +59,4 @@ class Usuario:
     def getNivel(self):
         return self.nivel
 
-    def setId(self, t):
-        self.id = t
-
-    def getId(self):
-        return self.id
+    # def getStoriesFromUser(user):
