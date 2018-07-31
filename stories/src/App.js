@@ -25,7 +25,7 @@ class App extends Component {
     if(this.state.username!==''){
       return(
         <div>
-          <p>Hola FEO</p>
+          <p>Hola {this.state.username}</p>
         </div>
       );
     }else{
