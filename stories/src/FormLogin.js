@@ -20,7 +20,7 @@ class FormLogin extends Component {
 
     handleSubmit(event) {
       console.log('A name was submitted: ' + this.state.username + ' & A password was submitted: ' + this.state.password);
-      this.props.getUsername(this.state.username);
+      this.props.getUsername(this.state.username); //aquí es donde hay que llamar si queremos que nos devuelva el nombre del usuario
       event.preventDefault();
     }
 
