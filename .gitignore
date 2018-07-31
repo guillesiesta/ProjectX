@@ -102,3 +102,6 @@ ENV/
 
 # vagrant
 .vagrant/
+
+# node modules
+/node_modules
