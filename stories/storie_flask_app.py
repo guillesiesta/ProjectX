@@ -9,6 +9,8 @@ from first_storie import firststorie
 from first_user import fu
 from flask import Flask, render_template, session, redirect, url_for, escape
 from flask_session import Session
+from flask_cors import CORS
+
 '''
 SECRET_KEY = 'guille'
 
@@ -20,6 +22,7 @@ app.config.from_object(__name__)
 Session(app)'''
 
 app = Flask(__name__)
+CORS(app)
 # app.config.from_object(__name__)
 
 

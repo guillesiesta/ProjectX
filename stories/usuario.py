@@ -2,14 +2,14 @@ from storie import Storie
 from py2neo import Graph, Node, Relationship, authenticate
 import os
 
-
+'''
 authenticate("localhost:7474", "neo4j", "root")
 url = os.environ.get('graph.db', 'http://localhost:7474')
 username = os.environ.get('neo4j')
 password = os.environ.get('root')
 
 graph = Graph('localhost:7474/db/data/', username=username, password=password)
-
+'''
 # -*- coding: utf-8 -*-
 class Usuario:
     """
