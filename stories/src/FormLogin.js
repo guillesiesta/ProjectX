@@ -19,8 +19,8 @@ class FormLogin extends Component {
     }
 
     handleSubmit(event) {
-      //alert('A name was submitted: ' + this.state.username + ' & A password was submitted: ' + this.state.password);
       console.log('A name was submitted: ' + this.state.username + ' & A password was submitted: ' + this.state.password);
+      this.props.getUsername(this.state.username);
       event.preventDefault();
     }
 
