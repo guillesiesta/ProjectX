@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 
-import FormLogin from './FormLogin';
+import FormLogin from './components/FormLogin';
 //import AxiosParty from './AxiosParty'
 
 class App extends Component {
