@@ -3,6 +3,9 @@ import logo from './logo.svg';
 import './App.css';
 
 import FormLogin from './components/FormLogin';
+import Header from './components/Header';
+import SideBar from './components/SideBar';
+import Content from './components/Content';
 //import AxiosParty from './AxiosParty'
 
 class App extends Component {
@@ -25,7 +28,9 @@ class App extends Component {
     if(this.state.username!==''){
       return(
         <div>
-          <p>Hola {this.state.username}</p>
+          <Header />
+          <SideBar />
+          <Content />
         </div>
       );
     }else{
@@ -41,13 +46,13 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <header className="App-header">
+        {/*<header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
           <h1 className="App-title">Welcome to Riddling</h1>
         </header>
         <p className="App-intro">
           To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+        </p>*/}
         {this.renderLogin()}
         {/*}<AxiosParty /> Esto es la prueba que hice para capturar de flask*/}
 
