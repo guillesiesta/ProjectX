@@ -11,7 +11,7 @@ export default class SideBar extends Component {
     };
   }
 
-  renderAcertijosLayout(){
+  handleClick(){
     console.log("dentro acertijos layout");
     <Acertijos />
   }
@@ -31,7 +31,7 @@ export default class SideBar extends Component {
                     <ul className="sidebar-menu" data-widget="tree">
                         <li className="header">DETECTIVE</li>
                         <li className="treeview">
-                            <a onClick={() => this.renderAcertijosLayout()}>
+                            <a value='1' onClick={() => this.handleClick()}>
                                 <i className="fa fa-files-o"></i>
                                 <span>Resolver Acertijo</span>
                             </a>
@@ -56,6 +56,7 @@ export default class SideBar extends Component {
                     </ul>
                 </section>
             </aside>
+
         )
     }
 }

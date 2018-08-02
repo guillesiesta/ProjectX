@@ -12,7 +12,10 @@ class App extends Component {
 
   constructor (props){
     super(props);
-    this.state = { username: 'guillesiesta', password:''}; //poner username a '' para empezar con el login
+    this.state = { username: 'guillesiesta',
+                   password:'',
+                   content: 1,
+                 }; //poner username a '' para empezar con el login
 
     this.renderLogin = this.renderLogin.bind(this);
 
@@ -21,6 +24,7 @@ class App extends Component {
   logUsername = (user) => {
     this.setState({ username:user });
   }
+
 
   renderLogin(){
     console.log('USUARIO: ' + this.state.username );
@@ -31,6 +35,7 @@ class App extends Component {
           <Header />
           <SideBar user={this.state.username}/>
           <Content />
+          {/*}<Content />*/}
           <FormLogout getUsername={this.logUsername}/>
         </div>
       );

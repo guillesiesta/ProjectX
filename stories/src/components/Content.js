@@ -10,7 +10,6 @@ export default class Content extends Component {
                             <div className="box">
                                 <div className="box-header with-border">
                                     <h3 className="box-title">Riddling</h3>
-                                    {this.props.tipo}
                                 </div>
                                 <div className="box-body">
                                     <div className="row">
