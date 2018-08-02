@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 
-export default class Content extends Component {
+export default class Acertijos extends Component {
     render(){
         return (
             <div className="content-wrapper">
@@ -9,7 +9,7 @@ export default class Content extends Component {
                         <div className="col-md-12">
                             <div className="box">
                                 <div className="box-header with-border">
-                                    <h3 className="box-title">Riddling</h3>
+                                    <h3 className="box-title">Acertijos</h3>
                                     {this.props.tipo}
                                 </div>
                                 <div className="box-body">

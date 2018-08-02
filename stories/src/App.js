@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
 
 import FormLogin from './components/FormLogin';
@@ -13,7 +12,7 @@ class App extends Component {
 
   constructor (props){
     super(props);
-    this.state = { username: '', password:''};
+    this.state = { username: 'guillesiesta', password:''}; //poner username a '' para empezar con el login
 
     this.renderLogin = this.renderLogin.bind(this);
 
