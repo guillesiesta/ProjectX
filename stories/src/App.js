@@ -6,6 +6,7 @@ import FormLogin from './components/FormLogin';
 import Header from './components/Header';
 import SideBar from './components/SideBar';
 import Content from './components/Content';
+import FormLogout from './components/FormLogout'
 //import AxiosParty from './AxiosParty'
 
 class App extends Component {
@@ -29,8 +30,9 @@ class App extends Component {
       return(
         <div>
           <Header />
-          <SideBar />
+          <SideBar user={this.state.username}/>
           <Content />
+          <FormLogout getUsername={this.logUsername}/>
         </div>
       );
     }else{
