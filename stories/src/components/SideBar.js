@@ -11,9 +11,9 @@ export default class SideBar extends Component {
     };
   }
 
-  handleClick(){
+  handleClick(i){
     console.log("dentro acertijos layout");
-    <Acertijos />
+    this.props.onClick(i);
   }
     render(){
         return (
@@ -31,24 +31,24 @@ export default class SideBar extends Component {
                     <ul className="sidebar-menu" data-widget="tree">
                         <li className="header">DETECTIVE</li>
                         <li className="treeview">
-                            <a value='1' onClick={() => this.handleClick()}>
+                            <a onClick={()=> this.handleClick(1)}>
                                 <i className="fa fa-files-o"></i>
                                 <span>Resolver Acertijo</span>
                             </a>
                         </li>
                         <li>
-                        <a >
+                        <a onClick={()=> this.handleClick(2)}>
                             <i className="fa fa-th"></i> <span>Proponer Acertijo</span>
                         </a>
                         </li>
                         <li>
-                        <a >
+                        <a onClick={()=> this.handleClick(3)}>
                             <i className="fa fa-th"></i> <span>Tus Acertijos</span>
                         </a>
                         </li>
 
                         <li className="treeview">
-                        <a >
+                        <a onClick={()=> this.handleClick(4)} >
                             <i className="fa fa-pie-chart"></i>
                             <span>Editar Perfil</span>
                         </a>

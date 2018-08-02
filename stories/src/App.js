@@ -22,16 +22,20 @@ class App extends Component {
     this.setState({ username:user });
   }
 
-
-
+  handleClick = (i) => {
+     this.setState({ content:i });
+  }
   render() {
-    console.log('USUARIO: ' + this.state.username );
+    console.log('USUARIO: ' + this.state.username);
+    console.log('Content: '+ this.state.content);
     //si el usuario está logeado
     if(this.state.username!==''){
       return(
         <div>
           <Header />
-          <SideBar user={this.state.username}/>
+          <SideBar user={this.state.username}
+                   onClick={this.handleClick}
+          />
           <Content />
           {/*}<Content />*/}
           <FormLogout getUsername={this.logUsername}/>
