@@ -16,9 +16,6 @@ class App extends Component {
                    password:'',
                    content: 1,
                  }; //poner username a '' para empezar con el login
-
-    this.renderLogin = this.renderLogin.bind(this);
-
   }
 
   logUsername = (user) => {
@@ -26,7 +23,8 @@ class App extends Component {
   }
 
 
-  renderLogin(){
+
+  render() {
     console.log('USUARIO: ' + this.state.username );
     //si el usuario está logeado
     if(this.state.username!==''){
@@ -46,24 +44,6 @@ class App extends Component {
       );
     }
 
-
-  }
-
-  render() {
-    return (
-      <div className="App">
-        {/*<header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to Riddling</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>*/}
-        {this.renderLogin()}
-        {/*}<AxiosParty /> Esto es la prueba que hice para capturar de flask*/}
-
-      </div>
-    );
   }
 }
 
