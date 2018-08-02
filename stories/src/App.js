@@ -5,6 +5,7 @@ import FormLogin from './components/FormLogin';
 import Header from './components/Header';
 import SideBar from './components/SideBar';
 import Content from './components/Content';
+import Acertijos from './components/Acertijos';
 import FormLogout from './components/FormLogout'
 //import AxiosParty from './AxiosParty'
 
@@ -12,7 +13,7 @@ class App extends Component {
 
   constructor (props){
     super(props);
-    this.state = { username: 'guillesiesta',
+    this.state = { username: '',
                    password:'',
                    content: 1,
                  }; //poner username a '' para empezar con el login
@@ -25,6 +26,20 @@ class App extends Component {
   handleClick = (i) => {
      this.setState({ content:i });
   }
+
+  contentLoad(i){
+    if(i===1){
+      return(
+        <Content />
+      );
+    }
+
+    if(i===2){
+      return(
+        <Acertijos />
+      );
+    }
+  }
   render() {
     console.log('USUARIO: ' + this.state.username);
     console.log('Content: '+ this.state.content);
@@ -36,7 +51,7 @@ class App extends Component {
           <SideBar user={this.state.username}
                    onClick={this.handleClick}
           />
-          <Content />
+          {this.contentLoad(this.state.content)};
           {/*}<Content />*/}
           <FormLogout getUsername={this.logUsername}/>
         </div>
