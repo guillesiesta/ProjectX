@@ -5,7 +5,9 @@ import FormLogin from './components/FormLogin';
 import Header from './components/Header';
 import SideBar from './components/SideBar';
 import Content from './components/Content';
-import Acertijos from './components/Acertijos';
+import AcertijosView from './components/AcertijosView';
+import TusAcertijosView from './components/TusAcertijosView';
+import ProponerView from './components/ProponerView';
 import FormLogout from './components/FormLogout'
 //import AxiosParty from './AxiosParty'
 
@@ -28,17 +30,30 @@ class App extends Component {
   }
 
   contentLoad(i){
-    if(i===1){
+    if(i===1){ //Acertijos
       return(
-        <Content />
+        <AcertijosView />
       );
     }
 
     if(i===2){
       return(
-        <Acertijos />
+        <ProponerView />
       );
     }
+
+    if(i===3){
+      return(
+        <TusAcertijosView />
+      );
+    }
+
+    if(i===4){
+      return(
+        <Content />
+      );
+    }
+
   }
   render() {
     console.log('USUARIO: ' + this.state.username);
@@ -52,8 +67,7 @@ class App extends Component {
                    onClick={this.handleClick}
           />
           {this.contentLoad(this.state.content)};
-          {/*}<Content />*/}
-          <FormLogout getUsername={this.logUsername}/>
+          {/*<FormLogout getUsername={this.logUsername}/>*/}
         </div>
       );
     }else{
