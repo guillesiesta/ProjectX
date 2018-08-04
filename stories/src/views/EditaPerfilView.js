@@ -12,38 +12,38 @@ export default class EditaPerfilView extends Component {
                             <p className="text-center">
                                 <strong>Editar Perfil</strong>
                             </p>
-                            <form class="form-horizontal">
+                            <form className="form-horizontal">
                               <div className="form-group">
-                                <label class="control-label col-sm-2" for="nick">Nick</label>
-                                <div class="col-sm-10">
-                                    <input type="text" value="guillesiesta" class="form-control"/>
+                                <label className="control-label col-sm-2" htmlFor="nick">Nick</label>
+                                <div className="col-sm-10">
+                                    <input type="text" defaultValue="guillesiesta" className="form-control"/>
                                 </div>
                               </div>
                               <div className="form-group">
-                                <label class="control-label col-sm-2" for="nombre">Nombre</label>
-                                <div class="col-sm-10">
-                                    <input type="text" value="Guillermo" class="form-control"/>
+                                <label className="control-label col-sm-2" htmlFor="nombre">Nombre</label>
+                                <div className="col-sm-10">
+                                    <input type="text" defaultValue="Guillermo" className="form-control"/>
                                 </div>
                               </div>
                               <div className="form-group">
-                                <label class="control-label col-sm-2" for="apellidos">Apellidos</label>
-                                <div class="col-sm-10">
-                                    <input type="text"  value="Muriel" class="form-control"/>
+                                <label className="control-label col-sm-2" htmlFor="apellidos">Apellidos</label>
+                                <div className="col-sm-10">
+                                    <input type="text"  defaultValue="Muriel" className="form-control"/>
                                 </div>
                               </div>
                               <div className="form-group">
-                                <label class="control-label col-sm-2" for="nick">Anterior Password</label>
-                                <div class="col-sm-10">
-                                    <input type="password" class="form-control"/>
+                                <label className="control-label col-sm-2" htmlFor="nick">Anterior Password</label>
+                                <div className="col-sm-10">
+                                    <input type="password" className="form-control"/>
                                 </div>
                               </div>
                               <div className="form-group">
-                                <label class="control-label col-sm-2" for="nick">Nueva Password</label>
-                                <div class="col-sm-10">
-                                    <input type="password" class="form-control"/>
+                                <label className="control-label col-sm-2" htmlFor="nick">Nueva Password</label>
+                                <div className="col-sm-10">
+                                    <input type="password" className="form-control"/>
                                 </div>
                               </div>
-                               <button type="submit" class="btn btn-primary">Submit</button>
+                               <button type="submit" className="btn btn-primary">Submit</button>
                             </form>
                           </div>
                           <div className="box-footer">

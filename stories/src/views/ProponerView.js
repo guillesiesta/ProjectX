@@ -14,20 +14,20 @@ export default class ProponerView extends Component {
                             </p>
                             <form>
                               <div className="form-group">
-                                <label for="title">Title:</label>
+                                <label htmlFor="title">Title:</label>
                                 <input type="text" className="form-control"/>
-                                <label for="title">Riddle:</label>
-                                <textarea class="form-control" rows="5"></textarea>
-                                <label for="title">Solution:</label>
-                                <textarea class="form-control" rows="5"></textarea>
-                                <label for="title">Clues:</label>
-                                <ul class="list-group">
+                                <label htmlFor="title">Riddle:</label>
+                                <textarea className="form-control" rows="5"></textarea>
+                                <label htmlFor="title">Solution:</label>
+                                <textarea className="form-control" rows="5"></textarea>
+                                <label htmlFor="title">Clues:</label>
+                                <ul className="list-group">
                                   <input type="text" className="form-control"/>
                                   <input type="text" className="form-control"/>
                                   <input type="text" className="form-control"/>
                                 </ul>
                               </div>
-                               <button type="submit" class="btn btn-primary">Submit</button>
+                               <button type="submit" className="btn btn-primary">Submit</button>
                             </form>
                           </div>
                           <div className="box-footer">

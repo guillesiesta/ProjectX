@@ -1,10 +1,17 @@
 import React, {Component} from 'react';
+import Riddle from './Riddle'
 
 export default class SmallRiddle extends Component {
 
+handleRiddle(){
+  return(
+    <Riddle />
+
+  )
+}
   render(){
     return(
-      <form>
+      <form onSubmit={this.handleRiddle}>
         <div className="box-header with-border">
           <div className="row">
             <strong>Storie 1</strong>
@@ -12,7 +19,7 @@ export default class SmallRiddle extends Component {
               las imprentas y archivos de texto. Lorem Ipsum ha sido el
               texto de relleno estándar de las industrias desde el año 1500,
             </p>
-            <button type="submit" class="btn btn-default">Acceder</button>
+            <button type="submit" className="btn btn-default">Acceder</button>
           </div>
         </div>
       </form>
