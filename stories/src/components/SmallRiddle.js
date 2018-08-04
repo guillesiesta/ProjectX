@@ -12,7 +12,7 @@ export default class SmallRiddle extends Component {
               las imprentas y archivos de texto. Lorem Ipsum ha sido el
               texto de relleno estándar de las industrias desde el año 1500,
             </p>
-            <button type="submit" class="btn btn-default">Resolver</button>
+            <button type="submit" class="btn btn-default">Acceder</button>
           </div>
         </div>
       </form>

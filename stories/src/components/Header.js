@@ -5,8 +5,8 @@ export default class Header extends Component {
         return (
             <header className="main-header">
                 <a className="logo">
-                    <span className="logo-mini"><b>R</b>D</span>
-                    <span className="logo-lg"><b>Riddling</b>Detective</span>
+                    <span className="logo-mini"><b>D</b>P</span>
+                    <span className="logo-lg"><b>Detective</b>Panel</span>
                 </a>
                 <nav className="navbar navbar-static-top">
                     <a className="sidebar-toggle" data-toggle="push-menu" role="button">
@@ -15,6 +15,7 @@ export default class Header extends Component {
                     <div className="navbar-custom-menu">
                         <ul className="nav navbar-nav">
                             <li className="dropdown messages-menu">
+                              
                             </li>
                         </ul>
                     </div>
