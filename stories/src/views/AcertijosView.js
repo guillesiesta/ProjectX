@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import SmallRiddle from "./SmallRiddle"
+import SmallRiddle from '../components/SmallRiddle'
 
 export default class AcertijosView extends Component {
     render(){

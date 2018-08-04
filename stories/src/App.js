@@ -4,10 +4,10 @@ import './App.css';
 import FormLogin from './components/FormLogin';
 import Header from './components/Header';
 import SideBar from './components/SideBar';
-import Content from './components/Content';
-import AcertijosView from './components/AcertijosView';
-import TusAcertijosView from './components/TusAcertijosView';
-import ProponerView from './components/ProponerView';
+import EditaPerfilView from './views/EditaPerfilView';
+import AcertijosView from './views/AcertijosView';
+import TusAcertijosView from './views/TusAcertijosView';
+import ProponerView from './views/ProponerView';
 import FormLogout from './components/FormLogout'
 //import AxiosParty from './AxiosParty'
 
@@ -15,7 +15,7 @@ class App extends Component {
 
   constructor (props){
     super(props);
-    this.state = { username: '',
+    this.state = { username: 'guillesiesta',
                    password:'',
                    content: 1,
                  }; //poner username a '' para empezar con el login
@@ -50,7 +50,7 @@ class App extends Component {
 
     if(i===4){
       return(
-        <Content />
+        <EditaPerfilView />
       );
     }
 
