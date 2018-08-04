@@ -66,7 +66,7 @@ class App extends Component {
           <SideBar user={this.state.username}
                    onClick={this.handleClick}
           />
-          {this.contentLoad(this.state.content)};
+          {this.contentLoad(this.state.content)}; {/*Aqui se carga el contenido de la pagina segun lo seleccionado en sidebar*/}
           {/*<FormLogout getUsername={this.logUsername}/>*/}
         </div>
       );
