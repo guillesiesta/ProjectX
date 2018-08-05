@@ -1,21 +1,17 @@
 import React, {Component} from 'react';
 import SmallRiddle from '../components/SmallRiddle'
-import Riddle from '../components/SmallRiddle'
+import Riddle from '../components/Riddle'
 
 export default class AcertijosView extends Component {
-  constructor(props){
-    super(props);
-    this.state = {dentro:false};
-  }
 
-  handleClick(){
-     this.setState({ dentro:true });
-         alert("ENTRAAA: "+this.state.dentro);
+  handleClick = (i) =>{
+     this.props.onClick(i);
+     console.log("ENTRAAA: "+i);
   }
 
 renderAcertijosView(){
-  if(this.state.dentro===false){
-    console.log("dentro: "+this.state.dentro);
+  if(this.props.value===false){
+    console.log("dentro si false: "+this.props.value);
     return(
       <div>
       <SmallRiddle onSubmit={this.handleClick}/>
@@ -26,8 +22,10 @@ renderAcertijosView(){
       <SmallRiddle />
     </div>
     );
-  }else{
-    console.log("dentro: "+this.state.dentro);
+  }
+
+  if(this.props.value===true){
+    console.log("dentro si true: "+this.props.value);
     return(
       <div>
         <Riddle />

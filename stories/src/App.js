@@ -18,6 +18,7 @@ class App extends Component {
     this.state = { username: 'guillesiesta',
                    password:'',
                    content: 1,
+                   dentro:false,
                  }; //poner username a '' para empezar con el login
   }
 
@@ -29,10 +30,14 @@ class App extends Component {
      this.setState({ content:i });
   }
 
+  handleClickDentro = (v) =>{
+    this.setState({dentro:v});
+  }
+
   contentLoad(i){
     if(i===1){ //Acertijos
       return(
-        <AcertijosView />
+        <AcertijosView value={this.state.dentro} onClick={this.handleClickDentro}/>
       );
     }
 
@@ -58,6 +63,7 @@ class App extends Component {
   render() {
     console.log('USUARIO: ' + this.state.username);
     console.log('Content: '+ this.state.content);
+    console.log('dentro: '+ this.state.dentro);
     //si el usuario está logeado
     if(this.state.username!==''){
       return(
