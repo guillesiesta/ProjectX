@@ -31,7 +31,7 @@ def run():
     # usuario = session['usuario'] = 'root'
     # return 'Logged in as ' + usuario + '<br>'
     # return redirect(url_for('index'))
-    return render_template('login.html')
+    return jsonify(status="OK")
 
 @app.route("/login", methods=['GET','POST'])
 def login():
