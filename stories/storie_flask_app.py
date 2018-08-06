@@ -11,6 +11,9 @@ from flask import Flask, render_template, session, redirect, url_for, escape
 from flask_session import Session
 from flask_cors import CORS
 
+from py2neo import Graph, Node, Relationship, authenticate
+
+
 '''
 SECRET_KEY = 'guille'
 
@@ -23,8 +26,30 @@ Session(app)'''
 
 app = Flask(__name__)
 CORS(app)
+
+authenticate("localhost:7474", "neo4j", "root")
+url = os.environ.get('graph.db', 'http://localhost:7474')
+username = os.environ.get('neo4j')
+password = os.environ.get('root')
+
+graph = Graph('localhost:7474/db/data/', username=username, password=password)
 # app.config.from_object(__name__)
 
+
+@app.route('/usuarios')
+def usuarios():
+    ''' meter metodo get users '''
+    # results = graph.cypher.execute(''' MATCH (u:Usuario) RETURN u.nick''')
+    query = ''' MATCH (u:Usuario) RETURN u.nick'''
+    return jsonify(graph.run(query).data())
+
+
+@app.route('/stories_tonystark')
+def stories():
+    ''' meter metodo get stories '''
+    # results = graph.cypher.execute(''' MATCH (u:Usuario) RETURN u.nick''')
+    query = ''' MATCH p=(u:Usuario{nick:"tonystark"})-[r:ESCRIBE]->(s:Storie) RETURN s.storie'''
+    return jsonify(graph.run(query).data())
 
 @app.route('/', methods=['GET', 'POST'])
 def run():
@@ -35,6 +60,19 @@ def run():
 
 @app.route("/login", methods=['GET','POST'])
 def login():
+
+    username = "tonystark"
+    password = "1234"
+
+    query = '''
+            MATCH (u:Usuario)
+            WHERE u.nick={n} AND u.password={p}
+            RETURN u.nick
+            '''
+    return jsonify(graph.run(query, n=username, p=password).data())
+
+
+'''
     if request.method == 'POST':
         username = request.form['username']
         password = request.form['password']
@@ -52,7 +90,7 @@ def login():
             return redirect(url_for('error'))
     else:
         return redirect(url_for('error'))
-
+'''
 
 @app.route('/index')
 def index():
