@@ -37,9 +37,19 @@ graph = Graph('localhost:7474/db/data/', username=username, password=password)
 
 
 @app.route('/usuarios')
-def index():
+def usuarios():
     ''' meter metodo get users '''
-    return render_template('index.html')
+    # results = graph.cypher.execute(''' MATCH (u:Usuario) RETURN u.nick''')
+    query = ''' MATCH (u:Usuario) RETURN u.nick'''
+    return jsonify(graph.run(query).data())
+
+
+@app.route('/stories_tonystark')
+def stories():
+    ''' meter metodo get stories '''
+    # results = graph.cypher.execute(''' MATCH (u:Usuario) RETURN u.nick''')
+    query = ''' MATCH p=(u:Usuario{nick:"tonystark"})-[r:ESCRIBE]->(s:Storie) RETURN s.storie'''
+    return jsonify(graph.run(query).data())
 
 @app.route('/', methods=['GET', 'POST'])
 def run():
