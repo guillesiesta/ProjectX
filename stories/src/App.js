@@ -1,27 +1,88 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
 
-import FormLogin from './FormLogin';
-import AxiosParty from './AxiosParty'
+import FormLogin from './components/FormLogin';
+import Header from './components/Header';
+import SideBar from './components/SideBar';
+import EditaPerfilView from './views/EditaPerfilView';
+import AcertijosView from './views/AcertijosView';
+import TusAcertijosView from './views/TusAcertijosView';
+import ProponerView from './views/ProponerView';
+import FormLogout from './components/FormLogout'
+//import AxiosParty from './AxiosParty'
 
 class App extends Component {
+
+  constructor (props){
+    super(props);
+    this.state = { username: 'guillesiesta',
+                   password:'',
+                   content: 1,
+                   dentro:false,
+                 }; //poner username a '' para empezar con el login
+  }
+
+  logUsername = (user) => {
+    this.setState({ username:user });
+  }
+
+  handleClick = (i) => {
+     this.setState({ content:i });
+  }
+
+  handleClickDentro = (v) =>{
+    this.setState({dentro:v});
+  }
+
+  contentLoad(i){
+    if(i===1){ //Acertijos
+      return(
+        <AcertijosView value={this.state.dentro} onClick={this.handleClickDentro}/>
+      );
+    }
+
+    if(i===2){
+      return(
+        <ProponerView />
+      );
+    }
+
+    if(i===3){
+      return(
+        <TusAcertijosView />
+      );
+    }
+
+    if(i===4){
+      return(
+        <EditaPerfilView />
+      );
+    }
+
+  }
   render() {
-    return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to Riddling</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
-      <FormLogin />
+    console.log('USUARIO: ' + this.state.username);
+    console.log('Content: '+ this.state.content);
+    console.log('dentro: '+ this.state.dentro);
+    //si el usuario está logeado
+    if(this.state.username!==''){
+      return(
+        <div>
+          <Header />
+          <SideBar user={this.state.username}
+                   onClick={this.handleClick}
+          />
+          {this.contentLoad(this.state.content)}; {/*Aqui se carga el contenido de la pagina segun lo seleccionado en sidebar*/}
+          {/*<FormLogout getUsername={this.logUsername}/>*/}
+        </div>
+      );
+    }else{
+      //si el usuario no esta logueado
+      return(
+        <FormLogin getUsername={this.logUsername}/>
+      );
+    }
 
-      <AxiosParty />
-
-      </div>
-    );
   }
 }
 
