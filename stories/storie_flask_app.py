@@ -60,17 +60,18 @@ def run():
 
 @app.route("/login", methods=['GET','POST'])
 def login():
-
+    #username = "tonystark"
+    #password = "1234"
     username = "tonystark"
     password = "1234"
-
+    '''json = request.get_json()
+    variable = json["variable"]'''
     query = '''
             MATCH (u:Usuario)
             WHERE u.nick={n} AND u.password={p}
-            RETURN u.nick
+            RETURN u.nick as nick
             '''
     return jsonify(graph.run(query, n=username, p=password).data())
-
 
 '''
     if request.method == 'POST':
