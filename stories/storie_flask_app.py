@@ -11,6 +11,9 @@ from flask import Flask, render_template, session, redirect, url_for, escape
 from flask_session import Session
 from flask_cors import CORS
 
+from py2neo import Graph, Node, Relationship, authenticate
+
+
 '''
 SECRET_KEY = 'guille'
 
@@ -23,8 +26,20 @@ Session(app)'''
 
 app = Flask(__name__)
 CORS(app)
+
+authenticate("localhost:7474", "neo4j", "root")
+url = os.environ.get('graph.db', 'http://localhost:7474')
+username = os.environ.get('neo4j')
+password = os.environ.get('root')
+
+graph = Graph('localhost:7474/db/data/', username=username, password=password)
 # app.config.from_object(__name__)
 
+
+@app.route('/usuarios')
+def index():
+    ''' meter metodo get users '''
+    return render_template('index.html')
 
 @app.route('/', methods=['GET', 'POST'])
 def run():
