@@ -15,7 +15,7 @@ class App extends Component {
 
   constructor (props){
     super(props);
-    this.state = { username: 'guillesiesta',
+    this.state = { username: '',
                    password:'',
                    content: 1,
                    dentro:false,
