@@ -60,6 +60,19 @@ def run():
 
 @app.route("/login", methods=['GET','POST'])
 def login():
+
+    username = "tonystark"
+    password = "1234"
+
+    query = '''
+            MATCH (u:Usuario)
+            WHERE u.nick={n} AND u.password={p}
+            RETURN u.nick
+            '''
+    return jsonify(graph.run(query, n=username, p=password).data())
+
+
+'''
     if request.method == 'POST':
         username = request.form['username']
         password = request.form['password']
@@ -77,7 +90,7 @@ def login():
             return redirect(url_for('error'))
     else:
         return redirect(url_for('error'))
-
+'''
 
 @app.route('/index')
 def index():
