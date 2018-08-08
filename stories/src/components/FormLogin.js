@@ -23,12 +23,29 @@ class FormLogin extends Component {
       console.log('A name was submitted: ' + this.state.username + ' & A password was submitted: ' + this.state.password);
       //this.props.getUsername(this.state.username); //aquí es donde hay que llamar si queremos que nos devuelva el nombre del usuario
 
-      axios.get('http://localhost:5000/login',{usern:this.state.username, passw:this.state.password})
+      /*axios.get('http://localhost:5000/login',{usern:this.state.username, passw:this.state.password})
         .then(function(response){
           var data = response['data'];
           //console.log("DATA: "+JSON.stringify(data[0].nick));
           console.log("el nick es:"+ response.data[0].nick);
-        });
+        });*/
+        fetch('http://localhost:5000/login', {
+              method: 'POST', // or 'PUT'
+              body: JSON.stringify(this.state.username), // data can be `string` or {object}!
+              headers:{
+                'Content-Type': 'application/json'
+              }})
+          .then(response => response.json())
+          .then(data => {
+            //console.log(data[0].nick) // Prints result from `response.json()` in getRequest
+            console.log(data[0].nick)
+            console.log(data[0].password)
+            //console.log(data)
+            if(this.state.password=== data[0].password){
+              this.props.getUsername(this.state.username);
+            }
+          })
+          .catch(error => console.error(error))
 /*
         axios.get('http://localhost:5000/login')
           .then(response => console.log("ESTO: " +response.data.storie+"+ ESto:" +response.data.title));

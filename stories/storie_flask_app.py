@@ -10,9 +10,9 @@ from first_user import fu
 from flask import Flask, render_template, session, redirect, url_for, escape
 from flask_session import Session
 from flask_cors import CORS
+from flask import request
 
 from py2neo import Graph, Node, Relationship, authenticate
-
 
 '''
 SECRET_KEY = 'guille'
@@ -62,16 +62,18 @@ def run():
 def login():
     #username = "tonystark"
     #password = "1234"
-    username = "tonystark"
+    username = request.get_json()
     password = "1234"
     '''json = request.get_json()
     variable = json["variable"]'''
     query = '''
             MATCH (u:Usuario)
-            WHERE u.nick={n} AND u.password={p}
-            RETURN u.nick as nick
+            WHERE u.nick={n}
+            RETURN u.nick as nick, u.password as password
             '''
-    return jsonify(graph.run(query, n=username, p=password).data())
+    '''print('Recibo esto: ', file=request.form)'''
+    return jsonify(graph.run(query, n=username).data())
+    '''return jsonify(username)'''
 
 '''
     if request.method == 'POST':
