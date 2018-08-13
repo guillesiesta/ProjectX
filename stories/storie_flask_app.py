@@ -56,6 +56,17 @@ def run():
     # return redirect(url_for('index'))
     return jsonify(status="OK")
 
+@app.route("/acertijo_por_titulo", methods=['GET','POST'])
+def acertijo_por_titulo():
+    titulo = request.get_json()
+    query = '''
+            MATCH (s:Storie)
+            WHERE s.titulo={t}
+            RETURN s.short_storie as short_storie
+    '''
+    return jsonify(graph.run(query, t=titulo).data())
+    # return jsonify(status="ACERTIJOS PARTY")
+
 @app.route("/login", methods=['GET','POST'])
 def login():
     #username = "tonystark"
