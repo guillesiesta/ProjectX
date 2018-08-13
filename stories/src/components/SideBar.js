@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import FormLogout from './FormLogout'
+//import FormLogout from './FormLogout'
 
 export default class SideBar extends Component {
 
@@ -20,7 +20,7 @@ export default class SideBar extends Component {
                 <section className="sidebar">
                     <div className="user-panel">
                         <div className="pull-left image">
-                            <img src="img/avatar6.png" className="img-circle"/>
+                            <img src="img/avatar6.png" alt="avatar" className="img-circle"/>
                         </div>
                         <div className="pull-left info">
                             <p>{this.props.user}</p>

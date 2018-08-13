@@ -36,13 +36,11 @@ graph = Graph('localhost:7474/db/data/', username=username, password=password)
 # app.config.from_object(__name__)
 
 
-@app.route('/usuarios')
-def usuarios():
-    ''' meter metodo get users '''
+@app.route('/all_stories_titulo')
+def all_stories_titulo():
     # results = graph.cypher.execute(''' MATCH (u:Usuario) RETURN u.nick''')
-    query = ''' MATCH (u:Usuario) RETURN u.nick'''
+    query = ''' MATCH (s:Storie) RETURN s.titulo as titulo'''
     return jsonify(graph.run(query).data())
-
 
 @app.route('/stories_tonystark')
 def stories():
@@ -71,7 +69,6 @@ def login():
             WHERE u.nick={n}
             RETURN u.nick as nick, u.password as password
             '''
-    '''print('Recibo esto: ', file=request.form)'''
     return jsonify(graph.run(query, n=username).data())
     '''return jsonify(username)'''
 

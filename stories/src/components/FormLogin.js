@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import axios from 'axios'
+//import axios from 'axios'
 
 class FormLogin extends Component {
 
@@ -38,8 +38,8 @@ class FormLogin extends Component {
           .then(response => response.json())
           .then(data => {
             //console.log(data[0].nick) // Prints result from `response.json()` in getRequest
-            console.log(data[0].nick)
-            console.log(data[0].password)
+            //console.log(data[0].nick)
+            //console.log(data[0].password)
             //console.log(data)
             if(this.state.password=== data[0].password){
               this.props.getUsername(this.state.username);
