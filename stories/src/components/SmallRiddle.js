@@ -4,15 +4,15 @@ export default class SmallRiddle extends Component {
   constructor(props){
     super(props);
     this.state={
-      acertijo:'por defecto',
+      acertijo:'por defecto', //se almacena el acertijo
     };
   }
-handleRiddle(t){
+handleRiddle(t){ //devuelvo hacia atrás el título del acertijo clicado
   this.props.onSubmit(t);
 }
 
 componentDidMount(){
-  console.log("datos de atras:"+this.props.value)
+  //console.log("datos de atras:"+this.props.value)
   fetch('http://localhost:5000/acertijo_por_titulo', {
         method: 'POST', // or 'PUT'
         body: JSON.stringify(this.props.value), // data can be `string` or {object}!
@@ -32,15 +32,13 @@ componentDidMount(){
 
 }
 cargaAcertijo(){
-
-
   return(
     <p>{this.state.acertijo}</p>
   )
 }
   render(){
     return(
-      <form onSubmit={()=> this.handleRiddle(true)}>
+      <form onSubmit={()=> this.handleRiddle(this.props.value)}>
         <div className="box-header with-border">
           <div className="row">
             <strong>{this.props.value}</strong>

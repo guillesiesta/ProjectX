@@ -7,11 +7,14 @@ export default class AcertijosView extends Component {
     super(props);
     this.state = {
       tit_stories: [],
+      dentro:false,
+      show:'',
     };
   }
 
   handleClick = (i) =>{
-     this.props.onClick(i);
+     //this.props.onClick(i);
+     this.setState({show:i}); //aqui pongo a mostrar el acertijo seleccionado en SmallRiddle
      console.log("ENTRAAA: "+i);
   }
 
@@ -28,9 +31,9 @@ componentDidMount(){
         //console.log(auxTit[i]);
       }
       this.setState({tit_stories:auxTit});
-      for(i=0; i<this.state.tit_stories.length;i++){
-      //console.log("Titulos del estado: "+this.state.tit_stories[i]);
-      }
+      /*for(i=0; i<this.state.tit_stories.length;i++){
+       console.log("Titulos del estado: "+this.state.tit_stories[i]);
+     }*/
       //console.log("Longitud:"+ this.state.tit_stories.length);
       })
     .catch(error => console.error(error))
@@ -47,7 +50,7 @@ chargeSmallRiddle(){
 }
 //<SmallRiddle onSubmit={this.handleClick} value={this.state.tit_stories[i]}/>
 renderAcertijosView(){
-  if(this.props.value===false){
+  if(this.state.show===''){
     //console.log("dentro si false: "+this.props.value);
     return(
       <div>
@@ -56,11 +59,11 @@ renderAcertijosView(){
     );
   }
 
-  if(this.props.value===true){
-    console.log("dentro si true: "+this.props.value);
+  if(this.state.show!==''){
+    //console.log("dentro si true: "+this.props.value);
     return(
       <div>
-        <Riddle />
+        <Riddle titulo={this.state.show}/>
       </div>
     );
   }

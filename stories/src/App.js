@@ -18,7 +18,7 @@ class App extends Component {
     this.state = { username: 'tonystark',
                    password:'1234',
                    content: 1,
-                   dentro:false,
+                   //dentro:false,
                  }; //poner username a '' para empezar con el login
   }
 
@@ -37,7 +37,7 @@ class App extends Component {
   contentLoad(i){
     if(i===1){ //Acertijos
       return(
-        <AcertijosView value={this.state.dentro} onClick={this.handleClickDentro}/>
+        <AcertijosView /*value={this.state.dentro}*/ onClick={this.handleClickDentro}/>
       );
     }
 

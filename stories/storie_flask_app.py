@@ -67,6 +67,19 @@ def acertijo_por_titulo():
     return jsonify(graph.run(query, t=titulo).data())
     # return jsonify(status="ACERTIJOS PARTY")
 
+@app.route("/todo_por_titulo", methods=['GET','POST'])
+def todo_por_titulo():
+    titulo = request.get_json()
+    #titulo = "Pasan cosas"
+    query = '''
+            MATCH (s:Storie)
+            WHERE s.titulo={t}
+            RETURN s.short_storie as short_storie , s.pista1 as pista1, s.pista2 as pista2, s.pista3 as pista3
+    '''
+    return jsonify(graph.run(query, t=titulo).data())
+    # return jsonify(status="ACERTIJOS PARTY")
+
+
 @app.route("/login", methods=['GET','POST'])
 def login():
     #username = "tonystark"
