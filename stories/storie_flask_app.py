@@ -74,7 +74,7 @@ def todo_por_titulo():
     query = '''
             MATCH (s:Storie)
             WHERE s.titulo={t}
-            RETURN s.short_storie as short_storie , s.pista1 as pista1, s.pista2 as pista2, s.pista3 as pista3
+            RETURN s.short_storie as short_storie , s.pista1 as pista1, s.pista2 as pista2, s.pista3 as pista3, s.estado as estado
     '''
     return jsonify(graph.run(query, t=titulo).data())
     # return jsonify(status="ACERTIJOS PARTY")

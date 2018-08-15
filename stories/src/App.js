@@ -30,14 +30,12 @@ class App extends Component {
      this.setState({ content:i });
   }
 
-  handleClickDentro = (v) =>{
-    this.setState({dentro:v});
-  }
+
 
   contentLoad(i){
     if(i===1){ //Acertijos
       return(
-        <AcertijosView /*value={this.state.dentro}*/ onClick={this.handleClickDentro}/>
+        <AcertijosView />
       );
     }
 
