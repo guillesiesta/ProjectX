@@ -56,6 +56,16 @@ def run():
     # return redirect(url_for('index'))
     return jsonify(status="OK")
 
+@app.route("/soluciones_por_titulo", methods=['GET','POST'])
+def soluciones_por_titulo():
+    titulo = request.get_json()
+    query = '''
+            MATCH ()-[r:PROPONE]->(s:Storie)
+            WHERE s.titulo={t}
+            RETURN r.solucion as solucion , r.puntuacion as puntuacion
+    '''
+    return jsonify(graph.run(query, t=titulo).data())
+
 @app.route("/acertijo_por_titulo", methods=['GET','POST'])
 def acertijo_por_titulo():
     titulo = request.get_json()
