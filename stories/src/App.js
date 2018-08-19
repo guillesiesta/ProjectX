@@ -15,7 +15,7 @@ class App extends Component {
 
   constructor (props){
     super(props);
-    this.state = { username: 'tonystark',
+    this.state = { username: 'stories_tonystark',
                    password:'1234',
                    content: 1,
                    //dentro:false,
@@ -35,25 +35,25 @@ class App extends Component {
   contentLoad(i){
     if(i===1){ //Acertijos
       return(
-        <AcertijosView />
+        <AcertijosView username={this.state.username}/>
       );
     }
 
     if(i===2){
       return(
-        <ProponerView />
+        <ProponerView username={this.state.username}/>
       );
     }
 
     if(i===3){
       return(
-        <TusAcertijosView />
+        <TusAcertijosView username={this.state.username}/>
       );
     }
 
     if(i===4){
       return(
-        <EditaPerfilView />
+        <EditaPerfilView username={this.state.username}/>
       );
     }
 

@@ -66,6 +66,21 @@ def soluciones_por_titulo():
     '''
     return jsonify(graph.run(query, t=titulo).data())
 
+@app.route("/enviar_comentario", methods=['GET','POST'])
+def enviar_comentario():
+    datos = request.get_json()  # cojo el json
+    # cojo cosas del json
+    titulo= datos.get('titulo')
+    comentario=datos.get('comentario')
+    usuario=datos.get('usuario')
+
+    query= '''
+        MATCH (u:Usuario), (s:Storie)
+        WHERE u.nick={u} AND s.titulo={t}
+        CREATE (u)-[r:PROPONE{solucion:{c}, puntuacion:1}]->(s)
+    '''
+    return jsonify(graph.run(query, t=titulo,u=usuario,c=comentario).data())
+
 @app.route("/acertijo_por_titulo", methods=['GET','POST'])
 def acertijo_por_titulo():
     titulo = request.get_json()

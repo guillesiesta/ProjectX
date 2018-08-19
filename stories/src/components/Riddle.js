@@ -13,7 +13,11 @@ export default class Riddle extends Component {
       estado:'por defecto',
       soluciones: [],
       sol_hidden:true,
+      comentario:'',
     };
+
+    this.handleCommentChange = this.handleCommentChange.bind(this);
+    this.handleSubmitComment = this.handleSubmitComment.bind(this);
   }
 
 componentDidMount(){
@@ -85,9 +89,40 @@ toggleHidden () {
     })
   }
 
+
+    handleCommentChange(event) {
+        this.setState({comentario: event.target.value});
+        //console.log(this.state.comentario);
+    }
+
+  handleSubmitComment(event){
+    //console.log("Esto es el comentario: "+this.state.comentario);
+    fetch('http://localhost:5000/enviar_comentario', { //cargamos acertijo
+          method: 'POST', // or 'PUT'
+          body: JSON.stringify({comentario:this.state.comentario,titulo:this.props.titulo,usuario:this.props.user}), // data can be `string` or {object}!
+          headers:{
+            'Content-Type': 'application/json'
+          }})
+      .then(response => response.json())
+      .then(data => {
+        /*console.log("De vuelta Comentario: "+data.comentario); // Prints result from `response.json()` in getRequest
+        console.log("De vuelta Titulo: "+data.titulo);
+        console.log("De vuelta Usuario : "+data.usuario);*/
+        console.log(data);
+        /*console.log(data[0].pista1)
+        console.log(data[0].pista2)
+        console.log(data[0].pista3)
+        console.log(data[0].estado)*/
+      })
+      .catch(error => console.error(error))
+
+        event.preventDefault();
+  }
+
+
   render(){
     return(
-      <form>
+      <form onSubmit={this.handleSubmitComment}>
         <div className="box-header with-border">
           <div className="row">
             <strong>{this.props.titulo}</strong>
@@ -99,7 +134,7 @@ toggleHidden () {
               <li className="list-group-item">{this.state.pista2}</li>
               <li className="list-group-item">{this.state.pista3}</li>
             </ul>
-            <textarea className="form-control" rows="5" id="comment"></textarea>
+            <textarea className="form-control" rows="5" value={this.state.comentario} onChange={this.handleCommentChange}></textarea>
             <p></p>
             <button type="submit" className="btn btn-default">Enviar Solucion</button>
             <p></p>

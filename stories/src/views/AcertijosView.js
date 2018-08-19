@@ -8,7 +8,7 @@ export default class AcertijosView extends Component {
     this.state = {
       tit_stories: [],
       dentro:false,
-      show:'',
+      show:'', //almaceno el titulo del acertijo que se mostrará en riddle
     };
   }
 
@@ -63,7 +63,7 @@ renderAcertijosView(){
     //console.log("dentro si true: "+this.props.value);
     return(
       <div>
-        <Riddle titulo={this.state.show}/>
+        <Riddle titulo={this.state.show} user={this.props.username}/>
       </div>
     );
   }
