@@ -81,6 +81,24 @@ def enviar_comentario():
     '''
     return jsonify(graph.run(query, t=titulo,u=usuario,c=comentario).data())
 
+@app.route("/enviar_storie", methods=['GET','POST'])
+def enviar_storie():
+    datos = request.get_json()  # cojo el json
+    # cojo cosas del json
+    titulo= datos.get('titulo')
+    acertijo=datos.get('acertijo')
+    solucion=datos.get('solucion')
+    pista1=datos.get('pista1')
+    pista2=datos.get('pista2')
+    pista3=datos.get('pista3')
+    usuario=datos.get('usuario')
+
+    query= '''
+            
+    '''
+
+    return jsonify(t=titulo, a=acertijo, s=solucion, p1=pista1, p2=pista2, p3=pista3, u=usuario)
+
 @app.route("/acertijo_por_titulo", methods=['GET','POST'])
 def acertijo_por_titulo():
     titulo = request.get_json()

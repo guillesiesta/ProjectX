@@ -15,7 +15,7 @@ class App extends Component {
 
   constructor (props){
     super(props);
-    this.state = { username: 'stories_tonystark',
+    this.state = { username: 'tonystark',
                    password:'1234',
                    content: 1,
                    //dentro:false,
