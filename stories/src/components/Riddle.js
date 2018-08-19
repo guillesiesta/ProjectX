@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import Solucion from '../components/Solucion'
 
 export default class Riddle extends Component {
 
@@ -10,11 +11,13 @@ export default class Riddle extends Component {
       pista2:'por defecto',
       pista3:'por defecto',
       estado:'por defecto',
+      soluciones: [],
+      sol_hidden:true,
     };
   }
 
 componentDidMount(){
-  fetch('http://localhost:5000/todo_por_titulo', {
+  fetch('http://localhost:5000/todo_por_titulo', { //cargamos acertijo
         method: 'POST', // or 'PUT'
         body: JSON.stringify(this.props.titulo), // data can be `string` or {object}!
         headers:{
@@ -36,26 +39,52 @@ componentDidMount(){
 
     })
     .catch(error => console.error(error))
+
+
+    fetch('http://localhost:5000/soluciones_por_titulo', { //cargamos las soluciones del acertijo
+          method: 'POST', // or 'PUT'
+          body: JSON.stringify(this.props.titulo), // data can be `string` or {object}!
+          headers:{
+            'Content-Type': 'application/json'
+          }})
+      .then(response => response.json())
+      .then(data => {
+        var array = [];
+        var i;
+        for(i=0; i<data.length;i++){
+            let aux = {'puntuacion':data[i].puntuacion, 'solucion':data[i].solucion};
+            array.push(aux);
+            //console.log(data[i].puntuacion);
+            //console.log(data[i].solucion);
+          }
+        this.setState({soluciones:array});
+        //console.log("array length: "+array.length);
+        /*var j;
+        for(j=0; j<array.length;j++){
+          console.log("Solución: "+array[j].solucion+" Puntuación: "+array[j].puntuacion);
+        }*/
+      })
+      .catch(error => console.error(error))
 }
 
 verComentarios(){
-  fetch('http://localhost:5000/soluciones_por_titulo', {
-        method: 'POST', // or 'PUT'
-        body: JSON.stringify(this.props.titulo), // data can be `string` or {object}!
-        headers:{
-          'Content-Type': 'application/json'
-        }})
-    .then(response => response.json())
-    .then(data => {
-      var i;
-      for(i=0; i<data.length;i++){
-          console.log(data[i].puntuacion);
-          console.log(data[i].solucion);
-        }
-      console.log(data)
-    })
-    .catch(error => console.error(error))
+  return(
+    <div>
+      {this.state.soluciones.map((i,index) => { //pongo index porque me obliga q ue las key sean diferentes
+        //console.log("Solucion: "+i.solucion+" .Puntuación: "+i.puntuacion);
+        return !this.state.sol_hidden && <Solucion key={index} solucion={i.solucion} puntuacion={i.puntuacion}/>
+      })}
+    </div>
+  );
+//  console.log(this.state.soluciones[0].solucion)
 }
+
+toggleHidden () {
+    this.setState({
+      sol_hidden: !this.state.sol_hidden
+    })
+  }
+
   render(){
     return(
       <form>
@@ -77,7 +106,10 @@ verComentarios(){
             <br></br>
             <br></br>
             <br></br>
-            <p><button type="button" className="btn btn-default" onClick={()=>this.verComentarios()}>Ver Soluciones propuestas</button></p>
+            <div>
+            {this.verComentarios()}
+            </div>
+            <p><button type="button" className="btn btn-default" onClick={this.toggleHidden.bind(this)}>Ver Soluciones propuestas</button></p>
           </div>
         </div>
       </form>
