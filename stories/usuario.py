@@ -1,5 +1,4 @@
 from storie import Storie
-from py2neo import Graph, Node, Relationship, authenticate
 import os
 
 '''
