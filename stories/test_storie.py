@@ -1,7 +1,6 @@
 # -*- coding: utf-8 -*-
 import pytest
 from storie import Storie
-from storie_flask_app import app
 
 
 def test_setTitle():
