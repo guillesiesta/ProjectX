@@ -85,19 +85,26 @@ def enviar_comentario():
 def enviar_storie():
     datos = request.get_json()  # cojo el json
     # cojo cosas del json
-    titulo= datos.get('titulo')
-    acertijo=datos.get('acertijo')
-    solucion=datos.get('solucion')
-    pista1=datos.get('pista1')
-    pista2=datos.get('pista2')
-    pista3=datos.get('pista3')
-    usuario=datos.get('usuario')
+    t= datos.get('titulo')
+    a=datos.get('acertijo')
+    s=datos.get('solucion')
+    p1=datos.get('pista1')
+    p2=datos.get('pista2')
+    p3=datos.get('pista3')
+    u=datos.get('usuario')
 
-    query= '''
-            
-    '''
+    # Creo storie
+    storie = Node("Storie", titulo=t, short_storie=a, storie=s, pista1=p1, pista2=p2, pista3=p3, estado=0)
+    graph.create(storie)
 
-    return jsonify(t=titulo, a=acertijo, s=solucion, p1=pista1, p2=pista2, p3=pista3, u=usuario)
+    # uno con el usuario
+    union = ''' MATCH (u:Usuario), (s:Storie)
+                WHERE u.nick={nick} AND s.titulo={titulo}
+                CREATE (u)-[:ESCRIBE]->(s)
+                '''
+    graph.run(union, nick=u, titulo=t)
+
+    return jsonify(t=t, a=a, s=s, p1=p1, p2=p2, p3=p3, u=u)
 
 @app.route("/acertijo_por_titulo", methods=['GET','POST'])
 def acertijo_por_titulo():

@@ -74,7 +74,7 @@ export default class ProponerView extends Component {
         /*console.log("De vuelta Comentario: "+data.comentario); // Prints result from `response.json()` in getRequest
         console.log("De vuelta Titulo: "+data.titulo);
         console.log("De vuelta Usuario : "+data.usuario);*/
-        console.log(data);
+        //console.log(data);
         /*console.log(data[0].pista1)
         console.log(data[0].pista2)
         console.log(data[0].pista3)
