@@ -42,12 +42,17 @@ def all_stories_titulo():
     query = ''' MATCH (s:Storie) RETURN s.titulo as titulo'''
     return jsonify(graph.run(query).data())
 
-@app.route('/stories_tonystark')
-def stories():
-    ''' meter metodo get stories '''
+@app.route('/user_stories_titulo', methods=['GET', 'POST'])
+def user_stories_titulo():
+    usuario = request.get_json()
     # results = graph.cypher.execute(''' MATCH (u:Usuario) RETURN u.nick''')
-    query = ''' MATCH p=(u:Usuario{nick:"tonystark"})-[r:ESCRIBE]->(s:Storie) RETURN s.storie'''
-    return jsonify(graph.run(query).data())
+    query = ''' MATCH (a:Usuario)-[r:ESCRIBE]->(s:Storie)
+                WHERE a.nick={u}
+                RETURN s.titulo as titulo'''
+
+    query2 = ''' MATCH (s:Storie) RETURN s.titulo as titulo'''
+    return jsonify(graph.run(query, u=usuario).data())
+    # return jsonify(username="OK")
 
 @app.route('/', methods=['GET', 'POST'])
 def run():
