@@ -16,19 +16,19 @@ export default class EditaPerfilView extends Component {
                               <div className="form-group">
                                 <label className="control-label col-sm-2" htmlFor="nick">Nick</label>
                                 <div className="col-sm-10">
-                                    <input type="text" defaultValue="guillesiesta" className="form-control"/>
+                                    <input type="text" defaultValue={this.props.username} className="form-control"/>
                                 </div>
                               </div>
                               <div className="form-group">
                                 <label className="control-label col-sm-2" htmlFor="nombre">Nombre</label>
                                 <div className="col-sm-10">
-                                    <input type="text" defaultValue="Guillermo" className="form-control"/>
+                                    <input type="text" defaultValue="POR DEFECTO" className="form-control"/>
                                 </div>
                               </div>
                               <div className="form-group">
                                 <label className="control-label col-sm-2" htmlFor="apellidos">Apellidos</label>
                                 <div className="col-sm-10">
-                                    <input type="text"  defaultValue="Muriel" className="form-control"/>
+                                    <input type="text"  defaultValue="POR DEFECTO" className="form-control"/>
                                 </div>
                               </div>
                               <div className="form-group">
