@@ -111,6 +111,21 @@ def enviar_storie():
 
     return jsonify(t=t, a=a, s=s, p1=p1, p2=p2, p3=p3, u=u)
 
+@app.route("/cambiar_puntuacion", methods=['GET','POST'])
+def cambiar_puntuacion():
+    datos = request.get_json()  # cojo el json
+    # cojo cosas del json
+    p= datos.get('puntuacion')
+    s=datos.get('solucion')
+
+    query= '''
+        MATCH ()-[r:PROPONE]->()
+        WHERE r.solucion={s}
+        SET r.puntuacion={p}
+        RETURN r.solucion as solucion
+    '''
+    return jsonify(graph.run(query,p=p, s=s).data())
+
 @app.route("/acertijo_por_titulo", methods=['GET','POST'])
 def acertijo_por_titulo():
     titulo = request.get_json()
@@ -118,6 +133,17 @@ def acertijo_por_titulo():
             MATCH (s:Storie)
             WHERE s.titulo={t}
             RETURN s.short_storie as short_storie
+    '''
+    return jsonify(graph.run(query, t=titulo).data())
+    # return jsonify(status="ACERTIJOS PARTY")
+
+@app.route("/storie_por_titulo", methods=['GET','POST'])
+def storie_por_titulo():
+    titulo = request.get_json()
+    query = '''
+            MATCH (s:Storie)
+            WHERE s.titulo={t}
+            RETURN s.storie as storie
     '''
     return jsonify(graph.run(query, t=titulo).data())
     # return jsonify(status="ACERTIJOS PARTY")

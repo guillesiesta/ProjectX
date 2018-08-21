@@ -15,7 +15,7 @@ export default class AcertijosView extends Component {
   handleClick = (i) =>{
      //this.props.onClick(i);
      this.setState({show:i}); //aqui pongo a mostrar el acertijo seleccionado en SmallRiddle
-     console.log("ENTRAAA: "+i);
+     //console.log("ENTRAAA: "+i);
   }
 
 componentDidMount(){

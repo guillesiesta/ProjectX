@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import SmallRiddle from '../components/SmallRiddle'
-import Riddle from '../components/Riddle'
+import PuntuarSolucion from '../components/PuntuarSolucion'
 
 export default class TusAcertijosView extends Component {
   constructor(props){
@@ -15,7 +15,7 @@ export default class TusAcertijosView extends Component {
   handleClick = (i) =>{
      //this.props.onClick(i);
      this.setState({show:i}); //aqui pongo a mostrar el acertijo seleccionado en SmallRiddle
-     console.log("ENTRAAA desde TusAcertijosView: "+i);
+     //console.log("ENTRAAA desde TusAcertijosView: "+i);
   }
 
 componentDidMount(){
@@ -69,7 +69,7 @@ renderAcertijosView(){
     //console.log("dentro si true: "+this.props.value);
     return(
       <div>
-        <Riddle titulo={this.state.show} user={this.props.username}/>
+        <PuntuarSolucion titulo={this.state.show}/>
       </div>
     );
   }

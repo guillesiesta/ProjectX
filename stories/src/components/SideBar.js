@@ -11,7 +11,7 @@ export default class SideBar extends Component {
   }
 
   handleClick(i){
-    console.log("dentro acertijos layout");
+    //console.log("dentro acertijos layout");
     this.props.onClick(i);
   }
     render(){
