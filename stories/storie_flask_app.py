@@ -11,7 +11,7 @@ from flask import Flask, render_template, session, redirect, url_for, escape
 from flask_cors import CORS
 from flask import request
 
-from urllib.parse import urlparse, urlunparse
+from urlparse import urlparse, urlunparse
 from py2neo import Graph, Node, Relationship, authenticate
 
 '''
@@ -36,14 +36,15 @@ graph = Graph('localhost:7474/db/data/', username=username, password=password)''
 
 # graphenedb
 # root b.EHfhKziFIWUD.flOyvWSsunDKWsbC
+'''
 authenticate("hobby-bhhkpclnoaicgbkehnmkdnbl.dbs.graphenedb.com:24780", "root", "b.EHfhKziFIWUD.flOyvWSsunDKWsbC")
 graph = Graph("https://hobby-bhhkpclnoaicgbkehnmkdnbl.dbs.graphenedb.com:24780", bolt = False)
 
 authenticate("hobby-bhhkpclnoaicgbkehnmkdnbl.dbs.graphenedb.com:24780", "root", "b.EHfhKziFIWUD.flOyvWSsunDKWsbC")
 graph = Graph("bolt://hobby-bhhkpclnoaicgbkehnmkdnbl.dbs.graphenedb.com:24786", user="root", password="b.EHfhKziFIWUD.flOyvWSsunDKWsbC", bolt=True, secure = True, https_port = 24780)
-
+'''
 #add-on heroku graphenedb
-'''url = urlparse(os.environ.get("GRAPHENEDB_URL"))
+url = urlparse(os.environ.get("GRAPHENEDB_URL"))
 url_without_auth = urlunparse((url.scheme, "{0}:{1}".format(url.hostname, url.port), '', None, None, None))
 user = url.username
 password = url.password
@@ -55,7 +56,7 @@ graphenedb_url = os.environ.get("GRAPHENEDB_BOLT_URL")
 graphenedb_user = os.environ.get("GRAPHENEDB_BOLT_USER")
 graphenedb_pass = os.environ.get("GRAPHENEDB_BOLT_PASSWORD")
 graph = Graph(graphenedb_url, user=graphenedb_user, password=graphenedb_pass, bolt = True, secure = True, http_port = 24789, https_port = 24780)
-'''
+
 # app.config.from_object(__name__)
 
 #retoco esto
