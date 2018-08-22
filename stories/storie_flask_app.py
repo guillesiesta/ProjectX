@@ -44,12 +44,12 @@ authenticate("hobby-bhhkpclnoaicgbkehnmkdnbl.dbs.graphenedb.com:24780", "root", 
 graph = Graph("bolt://hobby-bhhkpclnoaicgbkehnmkdnbl.dbs.graphenedb.com:24786", user="root", password="b.EHfhKziFIWUD.flOyvWSsunDKWsbC", bolt=True, secure = True, https_port = 24780)
 '''
 #add-on heroku graphenedb
-url = urlparse(os.environ.get("GRAPHENEDB_URL"))
-url_without_auth = urlunparse((url.scheme, "{0}:{1}".format(url.hostname, url.port), '', None, None, None))
-user = url.username
-password = url.password
+# url = urlparse(os.environ.get("GRAPHENEDB_URL"))
+# url_without_auth = urlunparse((url.scheme, "{0}:{1}".format(url.hostname, url.port), '', None, None, None))
+user = "app106476859-QJbr1C"
+password = "b.M2enCUumZgWh.d4zbtjAHquDM6pv5"
 
-authenticate(url_without_auth, user, password)
+authenticate("https://hobby-aemopclnoaicgbkedjdpdnbl.dbs.graphenedb.com:24780", user, password)
 graph = Graph(url_without_auth, bolt = False)
 
 graphenedb_url = os.environ.get("GRAPHENEDB_BOLT_URL")
