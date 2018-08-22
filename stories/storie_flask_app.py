@@ -55,7 +55,7 @@ graph = Graph("hobby-aemopclnoaicgbkedjdpdnbl.dbs.graphenedb.com:24780", bolt = 
 graphenedb_url = os.environ.get("GRAPHENEDB_BOLT_URL")
 graphenedb_user = os.environ.get("app106476859-QJbr1C")
 graphenedb_pass = os.environ.get("b.M2enCUumZgWh.d4zbtjAHquDM6pv5")
-graph = Graph("hobby-aemopclnoaicgbkedjdpdnbl.dbs.graphenedb.com:24780", user=graphenedb_user, password=graphenedb_pass, bolt = True, secure = True, http_port = 24789, https_port = 24780)
+graph = Graph("hobby-aemopclnoaicgbkedjdpdnbl.dbs.graphenedb.com:24780", user=graphenedb_user, password=graphenedb_pass, bolt = False, secure = True, http_port = 24789, https_port = 24780)
 
 # app.config.from_object(__name__)
 
