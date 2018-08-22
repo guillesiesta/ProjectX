@@ -50,7 +50,7 @@ user = "app106476859-QJbr1C"
 password = "b.M2enCUumZgWh.d4zbtjAHquDM6pv5"
 
 authenticate("hobby-aemopclnoaicgbkedjdpdnbl.dbs.graphenedb.com:24780", user, password)
-graph = Graph(url_without_auth, bolt = False)
+graph = Graph("hobby-aemopclnoaicgbkedjdpdnbl.dbs.graphenedb.com:24780", bolt = False)
 
 graphenedb_url = os.environ.get("GRAPHENEDB_BOLT_URL")
 graphenedb_user = os.environ.get("GRAPHENEDB_BOLT_USER")
