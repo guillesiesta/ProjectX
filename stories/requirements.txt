@@ -1,0 +1,10 @@
+pytest==3.2.3
+gunicorn==19.7.1
+pytest-flask==0.10.0
+Flask==0.12.3
+Flask-Cors==3.0.6
+Flask-Login==0.4.1
+Flask-Session==0.3.1
+neo4j-driver==1.4.0
+py==1.4.34
+py2neo==3.1.1

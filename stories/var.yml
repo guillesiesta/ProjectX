@@ -1,0 +1,9 @@
+project_name: ProjectX
+project_repo: https://github.com/guillesiesta/ProjectX.git
+project_path: stories
+
+system_packages:
+  - build-essential
+  - npm
+  - nodejs-legacy
+  - git
