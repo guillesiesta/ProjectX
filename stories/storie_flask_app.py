@@ -56,6 +56,7 @@ graphenedb_pass = os.environ.get("GRAPHENEDB_BOLT_PASSWORD")
 graph = Graph(graphenedb_url, user=graphenedb_user, password=graphenedb_pass, bolt = True, secure = True, http_port = 24789, https_port = 24780)
 # app.config.from_object(__name__)
 
+#retoco esto
 
 @app.route('/all_stories_titulo')
 def all_stories_titulo():
