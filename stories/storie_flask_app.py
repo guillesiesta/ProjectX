@@ -36,12 +36,14 @@ graph = Graph('localhost:7474/db/data/', username=username, password=password)''
 
 # graphenedb
 # root b.EHfhKziFIWUD.flOyvWSsunDKWsbC
-'''
+
 authenticate("hobby-bhhkpclnoaicgbkehnmkdnbl.dbs.graphenedb.com:24780", "root", "b.EHfhKziFIWUD.flOyvWSsunDKWsbC")
 graph = Graph("https://hobby-bhhkpclnoaicgbkehnmkdnbl.dbs.graphenedb.com:24780", bolt = False)
 
 authenticate("hobby-bhhkpclnoaicgbkehnmkdnbl.dbs.graphenedb.com:24780", "root", "b.EHfhKziFIWUD.flOyvWSsunDKWsbC")
 graph = Graph("bolt://hobby-bhhkpclnoaicgbkehnmkdnbl.dbs.graphenedb.com:24786", user="root", password="b.EHfhKziFIWUD.flOyvWSsunDKWsbC", bolt=True, secure = True, https_port = 24780)
+
+
 '''
 #add-on heroku graphenedb
 # url = urlparse(os.environ.get("GRAPHENEDB_URL"))
@@ -56,7 +58,7 @@ graphenedb_url = os.environ.get("GRAPHENEDB_BOLT_URL")
 graphenedb_user = os.environ.get("app106476859-QJbr1C")
 graphenedb_pass = os.environ.get("b.M2enCUumZgWh.d4zbtjAHquDM6pv5")
 graph = Graph("hobby-aemopclnoaicgbkedjdpdnbl.dbs.graphenedb.com:24780", user=graphenedb_user, password=graphenedb_pass, bolt = False, secure = True, http_port = 24789, https_port = 24780)
-
+'''
 # app.config.from_object(__name__)
 
 #retoco esto
