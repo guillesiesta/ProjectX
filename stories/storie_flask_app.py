@@ -46,7 +46,7 @@ graph = Graph("bolt://hobby-bhhkpclnoaicgbkehnmkdnbl.dbs.graphenedb.com:24786", 
 '''
 
 #add-on heroku graphenedb
-url = urlparse(os.environ.get("GRAPHENEDB_URL"))
+url = "https://app106476859-oDYBiX:b.yZomb8jqH5ok.LFZlLVKkXTNB9HIZ@hobby-ikjkoapniflegbkekhfodnbl.dbs.graphenedb.com:24780"
 url_without_auth = urlunparse((url.scheme, "{0}:{1}".format(url.hostname, url.port), '', None, None, None))
 user = url.username
 password = url.password
