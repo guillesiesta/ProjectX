@@ -27,11 +27,20 @@ app = Flask(__name__)
 CORS(app)
 
 # local
-authenticate("localhost:7474", "neo4j", "root")
+'''authenticate("localhost:7474", "neo4j", "root")
 url = os.environ.get('graph.db', 'http://localhost:7474')
 username = os.environ.get('neo4j')
 password = os.environ.get('root')
-graph = Graph('localhost:7474/db/data/', username=username, password=password)
+graph = Graph('localhost:7474/db/data/', username=username, password=password)'''
+
+# graphenedb
+# root b.EHfhKziFIWUD.flOyvWSsunDKWsbC
+authenticate("hobby-bhhkpclnoaicgbkehnmkdnbl.dbs.graphenedb.com:24780", "root", "b.EHfhKziFIWUD.flOyvWSsunDKWsbC")
+graph = Graph("https://hobby-bhhkpclnoaicgbkehnmkdnbl.dbs.graphenedb.com:24780", bolt = False)
+
+authenticate("hobby-bhhkpclnoaicgbkehnmkdnbl.dbs.graphenedb.com:24780", "root", "b.EHfhKziFIWUD.flOyvWSsunDKWsbC")
+graph = Graph("bolt://hobby-bhhkpclnoaicgbkehnmkdnbl.dbs.graphenedb.com:24786", user="root", password="b.EHfhKziFIWUD.flOyvWSsunDKWsbC", bolt=True, secure = True, https_port = 24780)
+
 # app.config.from_object(__name__)
 
 
