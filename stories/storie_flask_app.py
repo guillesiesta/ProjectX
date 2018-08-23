@@ -11,7 +11,7 @@ from flask import Flask, render_template, session, redirect, url_for, escape
 from flask_cors import CORS
 from flask import request
 
-from urllib.parse import urlparse, urlunparse
+# from urparse import urlparse, urlunparse
 from py2neo import Graph, Node, Relationship, authenticate
 
 '''
