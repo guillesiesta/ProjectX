@@ -43,10 +43,7 @@ graph = Graph("https://hobby-bhhkpclnoaicgbkehnmkdnbl.dbs.graphenedb.com:24780/d
 authenticate("hobby-bhhkpclnoaicgbkehnmkdnbl.dbs.graphenedb.com:24780", "root", "b.EHfhKziFIWUD.flOyvWSsunDKWsbC")
 graph = Graph("bolt://hobby-bhhkpclnoaicgbkehnmkdnbl.dbs.graphenedb.com:24786", user="root", password="b.EHfhKziFIWUD.flOyvWSsunDKWsbC", bolt=True, secure=True, https_port=24780)
 
-graph.run("CREATE (n:Person {name:'JOSETE'})")
-result = graph.run("MATCH (n:Person) RETURN n")
-for record in result:
-    print(record)
+
 '''
 #add-on heroku graphenedb
 # url = urlparse(os.environ.get("GRAPHENEDB_URL"))
@@ -60,7 +57,7 @@ graph = Graph("hobby-aemopclnoaicgbkedjdpdnbl.dbs.graphenedb.com:24780", bolt = 
 graphenedb_url = os.environ.get("GRAPHENEDB_BOLT_URL")
 graphenedb_user = os.environ.get("app106476859-QJbr1C")
 graphenedb_pass = os.environ.get("b.M2enCUumZgWh.d4zbtjAHquDM6pv5")
-graph = Graph("bolt://hobby-aemopclnoaicgbkedjdpdnbl.dbs.graphenedb.com:24780", user=graphenedb_user, password=graphenedb_pass, bolt = True, secure = True, http_port = 24789, https_port = 24780)
+graph = Graph("hobby-aemopclnoaicgbkedjdpdnbl.dbs.graphenedb.com:24780", user=graphenedb_user, password=graphenedb_pass, bolt = False, secure = True, http_port = 24789, https_port = 24780)
 '''
 # app.config.from_object(__name__)
 
