@@ -36,35 +36,33 @@ graph = Graph('localhost:7474/db/data/', username=username, password=password)''
 
 # graphenedb
 # root b.EHfhKziFIWUD.flOyvWSsunDKWsbC
-#authenticate("hobby-bhhkpclnoaicgbkehnmkdnbl.dbs.graphenedb.com:24780", "root", "b.EHfhKziFIWUD.flOyvWSsunDKWsbC")
-#graph = Graph("https://hobby-bhhkpclnoaicgbkehnmkdnbl.dbs.graphenedb.com:24780/db/data/", bolt=False)
 
-#authenticate("hobby-bhhkpclnoaicgbkehnmkdnbl.dbs.graphenedb.com:24780", "root", "b.EHfhKziFIWUD.flOyvWSsunDKWsbC")
-#graph = Graph("bolt://hobby-bhhkpclnoaicgbkehnmkdnbl.dbs.graphenedb.com:24786", user="root", password="b.EHfhKziFIWUD.flOyvWSsunDKWsbC", bolt=True, secure=True, https_port=24780)
+authenticate("hobby-bhhkpclnoaicgbkehnmkdnbl.dbs.graphenedb.com:24780", "root", "b.EHfhKziFIWUD.flOyvWSsunDKWsbC")
+graph = Graph("https://hobby-bhhkpclnoaicgbkehnmkdnbl.dbs.graphenedb.com:24780/db/data/", bolt=False)
 
-#graph.run("CREATE (n:Person {name:'JOSETE'})")
-#result = graph.run("MATCH (n:Person) RETURN n")
-#for record in result:
-#    print(record)
+authenticate("hobby-bhhkpclnoaicgbkehnmkdnbl.dbs.graphenedb.com:24780", "root", "b.EHfhKziFIWUD.flOyvWSsunDKWsbC")
+graph = Graph("bolt://hobby-bhhkpclnoaicgbkehnmkdnbl.dbs.graphenedb.com:24786", user="root", password="b.EHfhKziFIWUD.flOyvWSsunDKWsbC", bolt=True, secure=True, https_port=24780)
 
-
+graph.run("CREATE (n:Person {name:'JOSETE'})")
+result = graph.run("MATCH (n:Person) RETURN n")
+for record in result:
+    print(record)
+'''
 #add-on heroku graphenedb
+# url = urlparse(os.environ.get("GRAPHENEDB_URL"))
+# url_without_auth = urlunparse((url.scheme, "{0}:{1}".format(url.hostname, url.port), '', None, None, None))
+user = "app106476859-QJbr1C"
+password = "b.M2enCUumZgWh.d4zbtjAHquDM6pv5"
 
-#https
-url = urlparse(os.environ.get("GRAPHENEDB_URL"))
-url_without_auth = urlunparse((url.scheme, "{0}:{1}".format(url.hostname, url.port), '', None, None, None))
-user = url.username
-password = url.password
+authenticate("hobby-aemopclnoaicgbkedjdpdnbl.dbs.graphenedb.com:24780", user, password)
+graph = Graph("hobby-aemopclnoaicgbkedjdpdnbl.dbs.graphenedb.com:24780", bolt = False)
 
-authenticate(url_without_auth, user, password)
-graph = Graph(url_without_auth, bolt = False)
-
-#bolt connection
-'''graphenedb_url = os.environ.get("GRAPHENEDB_BOLT_URL")
-graphenedb_user = os.environ.get("GRAPHENEDB_BOLT_USER")
-graphenedb_pass = os.environ.get("GRAPHENEDB_BOLT_PASSWORD")
-graph = Graph(graphenedb_url, user=graphenedb_user, password=graphenedb_pass, bolt = True, secure = True, http_port = 24789, https_port = 24780)
-# app.config.from_object(__name__)'''
+graphenedb_url = os.environ.get("GRAPHENEDB_BOLT_URL")
+graphenedb_user = os.environ.get("app106476859-QJbr1C")
+graphenedb_pass = os.environ.get("b.M2enCUumZgWh.d4zbtjAHquDM6pv5")
+graph = Graph("bolt://hobby-aemopclnoaicgbkedjdpdnbl.dbs.graphenedb.com:24780", user=graphenedb_user, password=graphenedb_pass, bolt = True, secure = True, http_port = 24789, https_port = 24780)
+'''
+# app.config.from_object(__name__)
 
 #retoco esto
 
