@@ -14,6 +14,8 @@ class FormLogin extends Component {
 
     handleNameChange(event) {
         this.setState({username: event.target.value});
+        var me = sessionStorage.getItem('username');
+        console.log("GET local storage: "+ me);
     }
     handlePasswordChange(event) {
         this.setState({password: event.target.value});
@@ -62,7 +64,7 @@ class FormLogin extends Component {
           <label>Password:</label>
              <input type="password" value={this.state.password} onChange={this.handlePasswordChange} />
 
-          <input type="submit" value="Submit" />
+          <input type="submit" value="Doble Click para Entrar" />
         </form>
       );
     }

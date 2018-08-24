@@ -15,15 +15,22 @@ class App extends Component {
 
   constructor (props){
     super(props);
-    this.state = { username: 'tonystark',
-                   password:'1234',
+    this.state = { username:'',
+                   password:'',
                    content: 1,
+                   cache:'',
                    //dentro:false,
                  }; //poner username a '' para empezar con el login
   }
 
+
+
+
   logUsername = (user) => {
     this.setState({ username:user });
+    sessionStorage.setItem('username', this.state.username);
+    var me = sessionStorage.getItem('username');
+    console.log("GET local storage: "+ me);
   }
 
   handleClick = (i) => {
@@ -63,11 +70,11 @@ class App extends Component {
     //console.log('Content: '+ this.state.content);
     //console.log('dentro: '+ this.state.dentro);
     //si el usuario está logeado
-    if(this.state.username!==''){
+    if(sessionStorage.getItem('username')){
       return(
         <div>
           <Header />
-          <SideBar user={this.state.username}
+          <SideBar user={sessionStorage.getItem('username')}
                    onClick={this.handleClick}
           />
           {this.contentLoad(this.state.content)}; {/*Aqui se carga el contenido de la pagina segun lo seleccionado en sidebar*/}
