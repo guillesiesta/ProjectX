@@ -97,24 +97,36 @@ toggleHidden () {
 
   handleSubmitComment(event){
     //console.log("Esto es el comentario: "+this.state.comentario);
-    fetch('http://localhost:5000/enviar_comentario', { //cargamos acertijo
-          method: 'POST', // or 'PUT'
-          body: JSON.stringify({comentario:this.state.comentario,titulo:this.props.titulo,usuario:this.props.user}), // data can be `string` or {object}!
-          headers:{
-            'Content-Type': 'application/json'
-          }})
-      .then(response => response.json())
-      .then(data => {
-        /*console.log("De vuelta Comentario: "+data.comentario); // Prints result from `response.json()` in getRequest
-        console.log("De vuelta Titulo: "+data.titulo);
-        console.log("De vuelta Usuario : "+data.usuario);*/
-        console.log(data);
-        /*console.log(data[0].pista1)
-        console.log(data[0].pista2)
-        console.log(data[0].pista3)
-        console.log(data[0].estado)*/
-      })
-      .catch(error => console.error(error))
+    var comment = this.state.comentario;
+    //console.log("comentario "+comment)
+    //console.log(/^\s+$/.test(comment));
+    if(this.state.comentario==='' || /^\s+$/.test(comment)){
+      alert("El campo solución está vacío");
+    }else{
+      alert("Solución enviada correctamente");
+      fetch('http://localhost:5000/enviar_comentario', { //cargamos acertijo
+            method: 'POST', // or 'PUT'
+            body: JSON.stringify({comentario:this.state.comentario,titulo:this.props.titulo,usuario:this.props.user}), // data can be `string` or {object}!
+            headers:{
+              'Content-Type': 'application/json'
+            }})
+        .then(response => response.json())
+        .then(data => {
+          /*console.log("De vuelta Comentario: "+data.comentario); // Prints result from `response.json()` in getRequest
+          console.log("De vuelta Titulo: "+data.titulo);
+          console.log("De vuelta Usuario : "+data.usuario);*/
+          //console.log(data);
+          /*console.log(data[0].pista1)
+          console.log(data[0].pista2)
+          console.log(data[0].pista3)
+          console.log(data[0].estado)*/
+       })
+        .catch(error => console.error(error))
+
+        this.setState({comentario:''});
+      //  window.location.reload()
+    }
+
 
         event.preventDefault();
   }
