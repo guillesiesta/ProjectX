@@ -43,25 +43,25 @@ class App extends Component {
   contentLoad(i){
     if(i===1){ //Acertijos
       return(
-        <AcertijosView username={this.state.username}/>
+        <AcertijosView username={sessionStorage.getItem('username')}/>
       );
     }
 
     if(i===2){
       return(
-        <ProponerView username={this.state.username}/>
+        <ProponerView username={sessionStorage.getItem('username')}/>
       );
     }
 
     if(i===3){
       return(
-        <TusAcertijosView username={this.state.username}/>
+        <TusAcertijosView username={sessionStorage.getItem('username')}/>
       );
     }
 
     if(i===4){
       return(
-        <EditaPerfilView username={this.state.username}/>
+        <EditaPerfilView username={sessionStorage.getItem('username')}/>
       );
     }
 
