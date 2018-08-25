@@ -6,6 +6,17 @@ import pytest
 from flask import Flask, jsonify, request, make_response, url_for
 import json
 
+from py2neo import Graph, Node, Relationship, authenticate
+from flask_cors import CORS
+from flask import request
+
+authenticate("hobby-bhhkpclnoaicgbkehnmkdnbl.dbs.graphenedb.com:24780", "root", "b.EHfhKziFIWUD.flOyvWSsunDKWsbC")
+graph = Graph("https://hobby-bhhkpclnoaicgbkehnmkdnbl.dbs.graphenedb.com:24780", bolt=False, secure=True)
+
+authenticate("hobby-bhhkpclnoaicgbkehnmkdnbl.dbs.graphenedb.com:24780", "root", "b.EHfhKziFIWUD.flOyvWSsunDKWsbC")
+graph = Graph("bolt://hobby-bhhkpclnoaicgbkehnmkdnbl.dbs.graphenedb.com:24786", user="root", password="b.EHfhKziFIWUD.flOyvWSsunDKWsbC", bolt=True, secure=True, https_port=24780)
+
+
 def test_setTitle():
     storie = Storie()
     storie.setTitle("Capitán América y los siete enanitos")
