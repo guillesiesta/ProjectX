@@ -30,7 +30,8 @@ class App extends Component {
     this.setState({ username:user });
     sessionStorage.setItem('username', this.state.username);
     var me = sessionStorage.getItem('username');
-    console.log("GET local storage: "+ me);
+    //console.log("GET local storage: "+ me);
+    window.location.reload()
   }
 
   handleClick = (i) => {
@@ -64,11 +65,18 @@ class App extends Component {
       );
     }
 
+    if(i===5){
+      this.setState({ username:''});
+      sessionStorage.clear();
+      return(
+        <FormLogin getUsername={this.logUsername}/>
+      );
+    }
+
   }
   render() {
     //console.log('USUARIO: ' + this.state.username);
     //console.log('Content: '+ this.state.content);
-    //console.log('dentro: '+ this.state.dentro);
     //si el usuario está logeado
     if(sessionStorage.getItem('username')){
       return(

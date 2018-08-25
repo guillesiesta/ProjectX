@@ -64,7 +64,7 @@ class FormLogin extends Component {
           <label>Password:</label>
              <input type="password" value={this.state.password} onChange={this.handlePasswordChange} />
 
-          <input type="submit" value="Doble Click para Entrar" />
+          <input type="submit" value="Entrar" />
         </form>
       );
     }

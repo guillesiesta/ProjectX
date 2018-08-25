@@ -48,6 +48,12 @@ export default class SideBar extends Component {
                             <span>Editar Perfil</span>
                         </button>
                         </li>
+
+                        <li>
+                          <button className="btn btn-danger btn-block" onClick={()=> this.handleClick(5)} >
+                            <span>Logout</span>
+                        </button>
+                        </li>
                     </ul>
                 </section>
             </aside>
