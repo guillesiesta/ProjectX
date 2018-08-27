@@ -39,7 +39,7 @@ export default class PuntuarSolucion extends Component {
       })
       .catch(error => console.error(error))
 
-      fetch('http://localhost:5000/storie_por_titulo', { //cargamos las soluciones del acertijo
+      fetch('https://projectx-eagwiugnbd.now.sh/storie_por_titulo', { //cargamos las soluciones del acertijo
             method: 'POST', // or 'PUT'
             body: JSON.stringify(this.props.titulo), // data can be `string` or {object}!
             headers:{
