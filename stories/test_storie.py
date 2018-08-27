@@ -280,21 +280,61 @@ def test_storie_por_titulo():
     assert storie == '"test"'
 
 def test_todo_por_titulo():
-    titulo="titulo"
-    envio = json.dumps([{"titulo":titulo}])
-    short_storie="short_storie"
-    pista1 = "pista1"
-    pista2 = "pista2"
-    pista3 = "pista3"
-    estado = 25
-    recibo = json.dumps([{"short_storie":short_storie, "pista1":pista1, "pista2":pista2, "pista3":pista3, "estado":estado}])
-    assert envio == '[{"titulo": "titulo"}]'
-    assert recibo == '[{"pista1": "pista1", "pista3": "pista3", "pista2": "pista2", "estado": 25, "short_storie": "short_storie"}]'
+    ''' creo historia compruebo que existe esa historia'''
+
+    querycreatestorie = ''' CREATE (s:Storie {titulo:'test', short_storie:'test', storie:'test', pista1:'p1',pista2:'p2', pista3:'p3', estado:0})'''
+    graph.run(querycreatestorie)
+
+    query = '''
+            MATCH (s:Storie)
+            WHERE s.titulo="test"
+            RETURN s.titulo as titulo, s.short_storie as short_storie,
+                   s.storie as storie, s.pista1 as pista1,
+                   s.pista2 as pista2, s.pista3 as pista3,
+                   s.estado as estado
+    '''
+
+    tit = graph.run(query).data()
+    titulo = json.dumps(tit[0]["titulo"])
+    short_storie = json.dumps(tit[0]["short_storie"])
+    storie = json.dumps(tit[0]["storie"])
+    pista1 = json.dumps(tit[0]["pista1"])
+    pista2 = json.dumps(tit[0]["pista2"])
+    pista3 = json.dumps(tit[0]["pista3"])
+    estado = json.dumps(tit[0]["estado"])
+
+    query2 = '''MATCH(s:Storie)
+                WHERE s.titulo="test"
+                DELETE s'''
+    graph.run(query2)
+
+    assert titulo == '"test"'
+    assert short_storie == '"test"'
+    assert storie == '"test"'
+    assert pista1 == '"p1"'
+    assert pista2 == '"p2"'
+    assert pista3 == '"p3"'
+    assert estado == '0'
+
 
 def test_login():
-    usuario="usuario"
-    envio = json.dumps({"usuario":usuario})
-    password = "1234"
-    recibo = json.dumps([{"nick":usuario}])
-    assert envio == '{"usuario": "usuario"}'
-    assert recibo == '[{"nick": "usuario"}]'
+
+    querycreateuser = ''' CREATE (u:Usuario {nick:'testuser', password:'1234'})'''
+    graph.run(querycreateuser)
+
+    query = '''
+            MATCH (u:Usuario)
+            WHERE u.nick="testuser"
+            RETURN u.nick as nick, u.password as password
+            '''
+    info = graph.run(query).data()
+    nick = json.dumps(info[0]["nick"])
+    password = json.dumps(info[0]["password"])
+
+    query2 = '''MATCH(u:Usuario)
+                WHERE u.nick="testuser"
+                DELETE u'''
+    graph.run(query2)
+
+    assert nick == '"testuser"'
+    assert password == '"1234"'
