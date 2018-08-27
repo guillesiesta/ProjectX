@@ -54,13 +54,14 @@ def test_app():
     return app
 
 def test_all_stories_titulo():
-    #cuento todas las historias que hay, ingroduzco 1 y compruebo
+    '''cuento todas las historias que hay, ingroduzco 1 y compruebo'''
+
     query = ''' MATCH (s:Storie) RETURN count(*) as c'''
     cont1 = graph.run(query).data()
 
     cuenta_inicial = json.dumps(cont1[0]["c"])
 
-    query2 = ''' CREATE (s:Storie {titulo:'test'})'''
+    query2 = ''' CREATE (s:Storie {titulo:'teststorie'})'''
     graph.run(query2)
 
     query = ''' MATCH (s:Storie) RETURN count(*) as c'''
@@ -68,45 +69,157 @@ def test_all_stories_titulo():
 
     cuenta_final = json.dumps(cont2[0]["c"])
 
-    query3 = ''' MATCH (s:Storie) WHERE s.titulo="test" DELETE s '''
+    query3 = ''' MATCH (s:Storie) WHERE s.titulo="teststorie" DELETE s '''
     graph.run(query3)
-
     cuenta_inicial = int(cuenta_inicial)
     cuenta_final = int(cuenta_final)
     assert cuenta_final == cuenta_inicial + 1
 
 def test_user_stories_titulo():
-    titulos_usuario = [{"titulo":"algo"},{"titulo":"otra"},{"titulo":"titulaso"}]
-    titulos_json = json.dumps(titulos_usuario)  # codificamos en json
-    assert titulos_json == '[{"titulo": "algo"}, {"titulo": "otra"}, {"titulo": "titulaso"}]'
+    ''' creo historia, creo usuario, lo relaciono y compruebo que
+    ese usuario ha escrito esa historia'''
+
+    querycreateuser = ''' CREATE (u:Usuario {nick:'testuser'})'''
+    graph.run(querycreateuser)
+
+    querycreatestorie = ''' CREATE (s:Storie {titulo:'test'})'''
+    graph.run(querycreatestorie)
+
+    querycreaterelation = ''' MATCH (u:Usuario), (s:Storie)
+                              WHERE u.nick="testuser" AND s.titulo="test"
+                              CREATE (u)-[:ESCRIBE]->(s) '''
+
+    graph.run(querycreaterelation)
+
+    query = ''' MATCH (a:Usuario)-[r:ESCRIBE]->(s:Storie)
+                WHERE a.nick="testuser"
+                RETURN s.titulo as titulo'''
+
+    tit = graph.run(query).data()
+    titulo = json.dumps(tit[0]["titulo"])
+
+    query2 = '''MATCH (u:Usuario)-[r:ESCRIBE]->(s:Storie)
+                WHERE s.titulo="test" AND u.nick="testuser"
+                DELETE u,s,r'''
+    graph.run(query2)
+
+    assert titulo == '"test"'
 
 def test_soluciones_por_titulo():
-    titysol = [{"titulo":"algo","puntuacion":2},{"titulo":"otro", "puntuacion":3}]
-    titysol_json = json.dumps(titysol)
-    assert titysol_json == '[{"puntuacion": 2, "titulo": "algo"}, {"puntuacion": 3, "titulo": "otro"}]'
+
+    querycreateuser = ''' CREATE (u:Usuario {nick:'testuser'})'''
+    graph.run(querycreateuser)
+
+    querycreatestorie = ''' CREATE (s:Storie {titulo:'test'})'''
+    graph.run(querycreatestorie)
+
+    querycreaterelation = ''' MATCH (u:Usuario), (s:Storie)
+                              WHERE u.nick="testuser" AND s.titulo="test"
+                              CREATE (u)-[r:PROPONE{solucion:"testsolucion", puntuacion:1}]->(s) '''
+
+    graph.run(querycreaterelation)
+
+    query = '''
+            MATCH ()-[r:PROPONE]->(s:Storie)
+            WHERE s.titulo="test"
+            RETURN r.solucion as solucion , r.puntuacion as puntuacion
+    '''
+    info = graph.run(query).data()
+    solucion = json.dumps(info[0]["solucion"])
+    puntuacion = json.dumps(info[0]["puntuacion"])
+
+    query2 = '''MATCH (u:Usuario)-[r:PROPONE]->(s:Storie)
+                WHERE s.titulo="test" AND u.nick="testuser"
+                DELETE u,s,r'''
+    graph.run(query2)
+
+    assert solucion=='"testsolucion"'
+    assert puntuacion=='1'
 
 def test_enviar_comentario():
-    usuario="usuario"
-    titulo="titulo"
-    comentario="me encanta"
-    envio = json.dumps([{"titulo":titulo, "comentario":comentario, "usuario":usuario}])
-    assert envio == '[{"titulo": "titulo", "comentario": "me encanta", "usuario": "usuario"}]'
+    querycreateuser = ''' CREATE (u:Usuario {nick:'testuser'})'''
+    graph.run(querycreateuser)
+
+    querycreatestorie = ''' CREATE (s:Storie {titulo:'test'})'''
+    graph.run(querycreatestorie)
+
+    querycreaterelation = ''' MATCH (u:Usuario), (s:Storie)
+                              WHERE u.nick="testuser" AND s.titulo="test"
+                              CREATE (u)-[r:PROPONE{solucion:"testsolucion", puntuacion:1}]->(s) '''
+
+    graph.run(querycreaterelation)
+
+    query = '''
+            MATCH (u:Usuario)-[r:PROPONE]->(s:Storie)
+            WHERE s.titulo="test" AND u.nick="testuser"
+            RETURN r.solucion as solucion , r.puntuacion as puntuacion
+    '''
+    info = graph.run(query).data()
+    solucion = json.dumps(info[0]["solucion"])
+    puntuacion = json.dumps(info[0]["puntuacion"])
+
+    query2 = '''MATCH (u:Usuario)-[r:PROPONE]->(s:Storie)
+                WHERE s.titulo="test" AND u.nick="testuser"
+                DELETE u,s,r'''
+    graph.run(query2)
+
+    assert solucion=='"testsolucion"'
+    assert puntuacion=='1'
 
 def test_enviar_storie():
-    titulo="titulo"
-    acertijo="acertijo"
-    solucion="solucion"
-    pista1="pista1"
-    pista2="pista2"
-    pista3="pista3"
-    usuario="usuario"
-    envio = json.dumps([{"titulo":titulo, "acertijo":acertijo, "solucion":solucion, "pista1":pista1, "pista2":pista2, "pista3":pista3, "usuario":usuario}])
-    assert envio == '[{"solucion": "solucion", "usuario": "usuario", "pista1": "pista1", "pista3": "pista3", "pista2": "pista2", "acertijo": "acertijo", "titulo": "titulo"}]'
+    ''' creo historia, creo usuario, lo relaciono y compruebo que
+    ese usuario ha escrito esa historia'''
+
+    querycreateuser = ''' CREATE (u:Usuario {nick:'testuser'})'''
+    graph.run(querycreateuser)
+
+    querycreatestorie = ''' CREATE (s:Storie {titulo:'test', short_storie:'test', storie:'test', pista1:'p1',pista2:'p2', pista3:'p3', estado:0})'''
+    graph.run(querycreatestorie)
+
+    querycreaterelation = ''' MATCH (u:Usuario), (s:Storie)
+                              WHERE u.nick="testuser" AND s.titulo="test"
+                              CREATE (u)-[:ESCRIBE]->(s) '''
+
+    graph.run(querycreaterelation)
+
+    query = ''' MATCH (a:Usuario)-[r:ESCRIBE]->(s:Storie)
+                WHERE a.nick="testuser"
+                RETURN s.titulo as titulo, s.short_storie as short_storie,
+                       s.storie as storie, s.pista1 as pista1,
+                       s.pista2 as pista2, s.pista3 as pista3,
+                       s.estado as estado'''
+
+    tit = graph.run(query).data()
+    titulo = json.dumps(tit[0]["titulo"])
+    short_storie = json.dumps(tit[0]["short_storie"])
+    storie = json.dumps(tit[0]["storie"])
+    pista1 = json.dumps(tit[0]["pista1"])
+    pista2 = json.dumps(tit[0]["pista2"])
+    pista3 = json.dumps(tit[0]["pista3"])
+    estado = json.dumps(tit[0]["estado"])
+
+    query2 = '''MATCH (u:Usuario)-[r:ESCRIBE]->(s:Storie)
+                WHERE s.titulo="test" AND u.nick="testuser"
+                DELETE u,s,r'''
+    graph.run(query2)
+
+    assert titulo == '"test"'
+    assert short_storie == '"test"'
+    assert storie == '"test"'
+    assert pista1 == '"p1"'
+    assert pista2 == '"p2"'
+    assert pista3 == '"p3"'
+    assert estado == '0'
 
 def test_cambiar_puntuacion():
-    puntuacion="puntuacion"
-    solucion="solucion"
-    envio = json.dumps([{"puntuacion":puntuacion, "solucion":solucion}])
+
+    query= '''
+        MATCH ()-[r:PROPONE]->()
+        WHERE r.solucion={s}
+        SET r.puntuacion={p}
+        RETURN r.solucion as solucion
+    '''
+    
     assert envio == '[{"puntuacion": "puntuacion", "solucion": "solucion"}]'
 
 def test_acertijo_por_titulo():
