@@ -219,7 +219,10 @@ def test_cambiar_puntuacion():
         SET r.puntuacion={p}
         RETURN r.solucion as solucion
     '''
-    
+
+    puntuacion="puntuacion"
+    solucion="solucion"
+    envio = json.dumps([{"puntuacion":puntuacion, "solucion":solucion}])
     assert envio == '[{"puntuacion": "puntuacion", "solucion": "solucion"}]'
 
 def test_acertijo_por_titulo():
