@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import url from '../url/url'
 //import axios from 'axios'
 
 class FormLogin extends Component {
@@ -31,7 +32,7 @@ class FormLogin extends Component {
           //console.log("DATA: "+JSON.stringify(data[0].nick));
           console.log("el nick es:"+ response.data[0].nick);
         });*/
-        fetch('http://localhost:5000/login', {
+        fetch('https://projectx-eagwiugnbd.now.sh/login', {
               method: 'POST', // or 'PUT'
               body: JSON.stringify(this.state.username), // data can be `string` or {object}!
               headers:{

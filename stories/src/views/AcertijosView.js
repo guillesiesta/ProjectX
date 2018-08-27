@@ -19,7 +19,7 @@ export default class AcertijosView extends Component {
   }
 
 componentDidMount(){
-  fetch('http://localhost:5000/all_stories_titulo')
+  fetch('https://projectx-eagwiugnbd.now.sh/all_stories_titulo')
     .then(response => response.json())
     .then(data => {
       //console.log(data.length) //para sacar la longitud del JSON

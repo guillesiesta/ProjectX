@@ -13,7 +13,7 @@ export default class PuntuarSolucion extends Component {
 
   componentDidMount(){
     //console.log("COSAS AQUI,titulo a buscar: "+this.props.titulo)
-    fetch('http://localhost:5000/soluciones_por_titulo', { //cargamos las soluciones del acertijo
+    fetch('https://projectx-eagwiugnbd.now.sh/soluciones_por_titulo', { //cargamos las soluciones del acertijo
           method: 'POST', // or 'PUT'
           body: JSON.stringify(this.props.titulo), // data can be `string` or {object}!
           headers:{

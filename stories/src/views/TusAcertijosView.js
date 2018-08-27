@@ -20,7 +20,7 @@ export default class TusAcertijosView extends Component {
 
 componentDidMount(){
   //console.log(this.props.username)
-  fetch('http://localhost:5000/user_stories_titulo', { //cargamos acertijo
+  fetch('https://projectx-eagwiugnbd.now.sh/user_stories_titulo', { //cargamos acertijo
         method: 'POST', // or 'PUT'
         body: JSON.stringify(this.props.username), // data can be `string` or {object}!
         headers:{

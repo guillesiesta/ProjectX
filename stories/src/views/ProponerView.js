@@ -57,7 +57,7 @@ export default class ProponerView extends Component {
     console.log("pista1: "+this.state.pista1);
     console.log("pista2: "+this.state.pista2);
     console.log("pista3: "+this.state.pista3);*/
-    fetch('http://localhost:5000/enviar_storie', { //cargamos acertijo
+    fetch('https://projectx-eagwiugnbd.now.sh/enviar_storie', { //cargamos acertijo
           method: 'POST', // or 'PUT'
           body: JSON.stringify({acertijo:this.state.acertijo,
                                 titulo:this.state.titulo,

@@ -23,7 +23,7 @@ handleSubmit(event) {
     //console.log('Tu puntuacion seleccionada es: '+ this.state.puntuacion);
     //console.log('Tu solucion seleccionada es: '+ this.props.solucion);
 
-    fetch('http://localhost:5000/cambiar_puntuacion', { //cargamos las soluciones del acertijo
+    fetch('https://projectx-eagwiugnbd.now.sh/cambiar_puntuacion', { //cargamos las soluciones del acertijo
           method: 'POST', // or 'PUT'
           body: JSON.stringify({solucion:this.props.solucion,
                                 puntuacion:this.state.puntuacion}), // data can be `string` or {object}!
