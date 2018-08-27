@@ -54,10 +54,26 @@ def test_app():
     return app
 
 def test_all_stories_titulo():
-    titulos = [{"titulo":"algo"},{"titulo":"otra"},{"titulo":"titulaso"}]
-    titulos_json = json.dumps(titulos)  # codificamos en json
-    # titulos_decode = json.loads(titulos_json)  # decodificamos el json
-    assert titulos_json == '[{"titulo": "algo"}, {"titulo": "otra"}, {"titulo": "titulaso"}]'
+    #cuento todas las historias que hay, ingroduzco 1 y compruebo
+    query = ''' MATCH (s:Storie) RETURN count(*) as c'''
+    cont1 = graph.run(query).data()
+
+    cuenta_inicial = json.dumps(cont1[0]["c"])
+
+    query2 = ''' CREATE (s:Storie {titulo:'test'})'''
+    graph.run(query2)
+
+    query = ''' MATCH (s:Storie) RETURN count(*) as c'''
+    cont2 = graph.run(query).data()
+
+    cuenta_final = json.dumps(cont2[0]["c"])
+
+    query3 = ''' MATCH (s:Storie) WHERE s.titulo="test" DELETE s '''
+    graph.run(query3)
+
+    cuenta_inicial = int(cuenta_inicial)
+    cuenta_final = int(cuenta_final)
+    assert cuenta_final == cuenta_inicial + 1
 
 def test_user_stories_titulo():
     titulos_usuario = [{"titulo":"algo"},{"titulo":"otra"},{"titulo":"titulaso"}]
