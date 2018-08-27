@@ -22,24 +22,25 @@ handlePuntuacionChange(event){
 handleSubmit(event) {
     //console.log('Tu puntuacion seleccionada es: '+ this.state.puntuacion);
     //console.log('Tu solucion seleccionada es: '+ this.props.solucion);
+    //alert("Puntuación enviada correctamente")
+      fetch('https://projectx-eagwiugnbd.now.sh/cambiar_puntuacion', { //cargamos las soluciones del acertijo
+            method: 'POST', // or 'PUT'
+            body: JSON.stringify({solucion:this.props.solucion,
+                                  puntuacion:this.state.puntuacion}), // data can be `string` or {object}!
+            headers:{
+              'Content-Type': 'application/json'
+            }})
+        .then(response => response.json())
+        .then(data => {
+          this.setState({puntuacion_previa:this.state.puntuacion});
+          //console.log(data);
+          //console.log("La storie es: "+data[0].storie)
+          //this.setState({storie:data[0].storie});
+        })
+        .catch(error => console.error(error))
 
-    fetch('https://projectx-eagwiugnbd.now.sh/cambiar_puntuacion', { //cargamos las soluciones del acertijo
-          method: 'POST', // or 'PUT'
-          body: JSON.stringify({solucion:this.props.solucion,
-                                puntuacion:this.state.puntuacion}), // data can be `string` or {object}!
-          headers:{
-            'Content-Type': 'application/json'
-          }})
-      .then(response => response.json())
-      .then(data => {
-        this.setState({puntuacion_previa:this.state.puntuacion});
-        //console.log(data);
-        //console.log("La storie es: "+data[0].storie)
-        //this.setState({storie:data[0].storie});
-      })
-      .catch(error => console.error(error))
+      event.preventDefault();
 
-    event.preventDefault();
   }
 
   render(){
@@ -50,6 +51,7 @@ handleSubmit(event) {
             <form>
               <li className="list-group-item">Solución: <strong>{this.props.solucion}</strong> y Puntuacion ACTUAL: <strong>{this.state.puntuacion_previa}</strong>
                 <select className="form-control" id="sel1" onChange={this.handlePuntuacionChange}>
+                  <option value="1">-</option>
                   <option value="1">1</option>
                   <option value="2">2</option>
                   <option value="3">3</option>
