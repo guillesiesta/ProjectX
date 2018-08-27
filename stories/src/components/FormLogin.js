@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import url from '../url/url'
 //import axios from 'axios'
 
 class FormLogin extends Component {
