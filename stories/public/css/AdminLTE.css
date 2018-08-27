@@ -575,7 +575,7 @@ a:focus {
   .sidebar-mini.sidebar-collapse .content-wrapper,
   .sidebar-mini.sidebar-collapse .right-side,
   .sidebar-mini.sidebar-collapse .main-footer {
-    margin-left: 50px !important;
+    margin-left: 138px !important;
     z-index: 840;
   }
   .sidebar-mini.sidebar-collapse .main-sidebar {
@@ -583,7 +583,7 @@ a:focus {
     -ms-transform: translate(0, 0);
     -o-transform: translate(0, 0);
     transform: translate(0, 0);
-    width: 50px !important;
+    width: 138px !important;
     z-index: 850;
   }
   .sidebar-mini.sidebar-collapse .sidebar-menu > li {
