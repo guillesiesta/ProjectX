@@ -21,7 +21,7 @@ export default class Riddle extends Component {
   }
 
 componentDidMount(){
-  fetch('https://projectx-eagwiugnbd.now.sh/todo_por_titulo', { //cargamos acertijo
+  fetch('https://projectx-wvueafqhpp.now.sh/todo_por_titulo', { //cargamos acertijo
         method: 'POST', // or 'PUT'
         body: JSON.stringify(this.props.titulo), // data can be `string` or {object}!
         headers:{
@@ -45,7 +45,7 @@ componentDidMount(){
     .catch(error => console.error(error))
 
 
-    fetch('https://projectx-eagwiugnbd.now.sh/soluciones_por_titulo', { //cargamos las soluciones del acertijo
+    fetch('https://projectx-wvueafqhpp.now.sh/soluciones_por_titulo', { //cargamos las soluciones del acertijo
           method: 'POST', // or 'PUT'
           body: JSON.stringify(this.props.titulo), // data can be `string` or {object}!
           headers:{
@@ -104,7 +104,7 @@ toggleHidden () {
       alert("El campo solución está vacío");
     }else{
       alert("Solución enviada correctamente");
-      fetch('https://projectx-eagwiugnbd.now.sh/enviar_comentario', { //cargamos acertijo
+      fetch('https://projectx-wvueafqhpp.now.sh/enviar_comentario', { //cargamos acertijo
             method: 'POST', // or 'PUT'
             body: JSON.stringify({comentario:this.state.comentario,titulo:this.props.titulo,usuario:this.props.user}), // data can be `string` or {object}!
             headers:{

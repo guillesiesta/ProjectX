@@ -13,7 +13,7 @@ handleRiddle(t){ //devuelvo hacia atrás el título del acertijo clicado
 
 componentDidMount(){
   //console.log("datos de atras:"+this.props.value)
-  fetch('https://projectx-eagwiugnbd.now.sh/acertijo_por_titulo', {
+  fetch('https://projectx-wvueafqhpp.now.sh/acertijo_por_titulo', {
         method: 'POST', // or 'PUT'
         body: JSON.stringify(this.props.value), // data can be `string` or {object}!
         headers:{

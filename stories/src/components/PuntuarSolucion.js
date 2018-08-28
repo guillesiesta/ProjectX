@@ -13,7 +13,7 @@ export default class PuntuarSolucion extends Component {
 
   componentDidMount(){
     //console.log("COSAS AQUI,titulo a buscar: "+this.props.titulo)
-    fetch('https://projectx-eagwiugnbd.now.sh/soluciones_por_titulo', { //cargamos las soluciones del acertijo
+    fetch('https://projectx-wvueafqhpp.now.sh/soluciones_por_titulo', { //cargamos las soluciones del acertijo
           method: 'POST', // or 'PUT'
           body: JSON.stringify(this.props.titulo), // data can be `string` or {object}!
           headers:{
@@ -39,7 +39,7 @@ export default class PuntuarSolucion extends Component {
       })
       .catch(error => console.error(error))
 
-      fetch('https://projectx-eagwiugnbd.now.sh/storie_por_titulo', { //cargamos las soluciones del acertijo
+      fetch('https://projectx-wvueafqhpp.now.sh/storie_por_titulo', { //cargamos las soluciones del acertijo
             method: 'POST', // or 'PUT'
             body: JSON.stringify(this.props.titulo), // data can be `string` or {object}!
             headers:{
@@ -65,7 +65,7 @@ export default class PuntuarSolucion extends Component {
       <div>
         {this.state.soluciones.map((i,index) => { //pongo index porque me obliga q ue las key sean diferentes
           //console.log("Solucion: "+i.solucion+" .Puntuación: "+i.puntuacion);
-          return !this.state.sol_hidden && <SolucionConCheck key={index} solucion={i.solucion} puntuacion={i.puntuacion}/>
+          return !this.state.sol_hidden && <SolucionConCheck key={index} solucion={i.solucion} puntuacion={i.puntuacion} titulo={this.props.titulo}/>
         })}
       </div>
     );

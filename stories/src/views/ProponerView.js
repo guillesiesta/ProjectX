@@ -67,7 +67,7 @@ export default class ProponerView extends Component {
     if(this.state.acertijo==='' || this.state.titulo==='' || this.state.solucion==='' || this.state.pista1==='' || this.state.pista2==='' || this.state.pista3==='' || /^\s+$/.test(acertijo) || /^\s+$/.test(solucion) || /^\s+$/.test(pista1)|| /^\s+$/.test(pista2)|| /^\s+$/.test(pista3)  ){
       alert("Se deben rellenar todos los campos");
     }else{
-    fetch('https://projectx-eagwiugnbd.now.sh/enviar_storie', { //cargamos acertijo
+    fetch('https://projectx-wvueafqhpp.now.sh/enviar_storie', { //cargamos acertijo
           method: 'POST', // or 'PUT'
           body: JSON.stringify({acertijo:this.state.acertijo,
                                 titulo:this.state.titulo,

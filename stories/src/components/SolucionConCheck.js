@@ -13,6 +13,10 @@ export default class SolucionConCheck extends Component {
         this.handleSubmit = this.handleSubmit.bind(this);
   }
 
+  /*componentDidMount(){
+    console.log("titulo de la historia: "+this.props.titulo)
+  }*/
+
 handlePuntuacionChange(event){
   this.setState({puntuacion:event.target.value});
   //var puntuacion = event.target.value;
@@ -23,17 +27,18 @@ handleSubmit(event) {
     //console.log('Tu puntuacion seleccionada es: '+ this.state.puntuacion);
     //console.log('Tu solucion seleccionada es: '+ this.props.solucion);
     //alert("Puntuación enviada correctamente")
-      fetch('https://projectx-eagwiugnbd.now.sh/cambiar_puntuacion', { //cargamos las soluciones del acertijo
+      fetch('https://projectx-wvueafqhpp.now.sh/cambiar_puntuacion', { //cargamos las soluciones del acertijo
             method: 'POST', // or 'PUT'
             body: JSON.stringify({solucion:this.props.solucion,
-                                  puntuacion:this.state.puntuacion}), // data can be `string` or {object}!
+                                  puntuacion:this.state.puntuacion,
+                                  titulo:this.props.titulo}), // data can be `string` or {object}!
             headers:{
               'Content-Type': 'application/json'
             }})
         .then(response => response.json())
         .then(data => {
           this.setState({puntuacion_previa:this.state.puntuacion});
-          //console.log(data);
+          console.log(data);
           //console.log("La storie es: "+data[0].storie)
           //this.setState({storie:data[0].storie});
         })
@@ -49,13 +54,13 @@ handleSubmit(event) {
             <div className="row">
 
             <form>
-              <li className="list-group-item">Solución: <strong>{this.props.solucion}</strong> y Puntuacion ACTUAL: <strong>{this.state.puntuacion_previa}</strong>
+              <li className="list-group-item">Solución: <strong>{this.props.solucion}</strong> y Puntuacion ACTUAL: <strong>{this.state.puntuacion_previa} %</strong>
                 <select className="form-control" id="sel1" onChange={this.handlePuntuacionChange}>
-                  <option value="1">-</option>
-                  <option value="1">1</option>
-                  <option value="2">2</option>
-                  <option value="3">3</option>
-                  <option value="4">4</option>
+                  <option value="-">-</option>
+                  <option value="25">25%</option>
+                  <option value="50">50%</option>
+                  <option value="75">75%</option>
+                  <option value="100">100%</option>
                 </select>
               </li>
               <input type="button" onClick={this.handleSubmit} value="Cambiar puntuacion" />

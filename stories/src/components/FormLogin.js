@@ -31,7 +31,7 @@ class FormLogin extends Component {
           //console.log("DATA: "+JSON.stringify(data[0].nick));
           console.log("el nick es:"+ response.data[0].nick);
         });*/
-        fetch('https://projectx-eagwiugnbd.now.sh/login', {
+        fetch('https://projectx-wvueafqhpp.now.sh/login', {
               method: 'POST', // or 'PUT'
               body: JSON.stringify(this.state.username), // data can be `string` or {object}!
               headers:{
