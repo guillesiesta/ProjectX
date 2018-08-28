@@ -264,6 +264,6 @@ def usuario():
 
 if __name__ == "__main__":
     app.secret_key = 'A0Zr98j/3yX R~XHH!jmN]LWX/,?RT'
-    app.run(host='0.0.0.0', port=5000, debug=True)
-    # app.run(host='0.0.0.0', port=80, debug=False) #descomentar esto para desplegar en ZEIT usando now
+    # app.run(host='0.0.0.0', port=5000, debug=True)
+    app.run(host='0.0.0.0', port=80, debug=False) #descomentar esto para desplegar en ZEIT usando now
     # app.run(host='0.0.0.0', port=80, debug=True)  # a la hora de desplegarlo cambiar a puerto 80
