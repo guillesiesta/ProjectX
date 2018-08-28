@@ -144,6 +144,9 @@ def cambiar_puntuacion():
     # cojo cosas del json
     p= datos.get('puntuacion')
     s=datos.get('solucion')
+    t=datos.get('titulo')
+
+    pint=int(p)
 
     query= '''
         MATCH ()-[r:PROPONE]->()
@@ -151,7 +154,21 @@ def cambiar_puntuacion():
         SET r.puntuacion={p}
         RETURN r.solucion as solucion
     '''
-    return jsonify(graph.run(query,p=p, s=s).data())
+    graph.run(query,p=pint, s=s).data()
+
+    query2 = '''MATCH ()-[r:PROPONE]->(s:Storie)
+                WHERE s.titulo={t}
+                RETURN max(r.puntuacion) as max'''
+    dato = graph.run(query2,t=t).data()
+
+    pparastorie = dato[0]["max"]
+
+    query3= '''MATCH (s:Storie)
+               WHERE s.titulo={t}
+               set s.estado={e}
+               return s.estado as estado_actual'''
+
+    return jsonify(graph.run(query3,t=t, e=pparastorie).data())
 
 @app.route("/acertijo_por_titulo", methods=['GET','POST'])
 def acertijo_por_titulo():
