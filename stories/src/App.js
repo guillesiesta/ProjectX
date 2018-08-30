@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import './App.css';
 
-import FormLogin from './components/FormLogin';
-import Header from './components/Header';
-import SideBar from './components/SideBar';
+import FormLogin from './components/FormLogin/FormLogin';
+import Header from './components/Header/Header';
+import SideBar from './components/SideBar/SideBar';
 import EditaPerfilView from './views/EditaPerfilView';
 import AcertijosView from './views/AcertijosView';
 import TusAcertijosView from './views/TusAcertijosView';

@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import SolucionConCheck from '../components/SolucionConCheck'
+import SolucionConCheck from '../SolucionConCheck/SolucionConCheck'
 
 export default class PuntuarSolucion extends Component {
 
