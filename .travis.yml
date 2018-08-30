@@ -3,8 +3,9 @@ python:
   - "2.7"
 install:
   - pip install -r requirements.txt
-  - nvm install 0.10
-  - npm install
+  - nvm install 0.25.0
+  - sudo npm ci
+  - sudo npm install
 script:
   - pytest
   - npm run tests
