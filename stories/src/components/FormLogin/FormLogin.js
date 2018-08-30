@@ -57,15 +57,23 @@ class FormLogin extends Component {
 
     render(){
       return(
-        <form onSubmit={this.handleSubmit}>
-          <label>User:</label>
-             <input type="text" value={this.state.username} onChange={this.handleNameChange} />
+        <div className="container">
+            <div className="row">
+              <div className="col-md-4 col-md-offset-4">
+                <form onSubmit={this.handleSubmit}>
+                  <img src="img/logo_riddling.png" className="img-rounded" alt="logo"/>
+                  <p></p>
 
-          <label>Password:</label>
-             <input type="password" value={this.state.password} onChange={this.handlePasswordChange} />
+                     <input type="text" placeholder="Usuario" value={this.state.username} onChange={this.handleNameChange} />
+                  <p></p>
 
-          <input type="submit" value="Entrar" />
-        </form>
+                     <input type="password" placeholder="Contraseña" value={this.state.password} onChange={this.handlePasswordChange} />
+                  <p></p>
+                  <input className="col-md-5 col-md-offset-1" type="submit" value="Entrar" />
+                </form>
+              </div>
+            </div>
+          </div>
       );
     }
 
