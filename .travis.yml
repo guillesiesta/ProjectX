@@ -14,7 +14,6 @@ matrix:
       before_install:
         - cd stories
       install:
-        - nvm install ls-remote
         - npm install
       script:
         - npm run test
