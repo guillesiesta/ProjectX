@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
-import SmallRiddle from '../components/SmallRiddle'
-import Riddle from '../components/Riddle'
+import SmallRiddle from '../components/SmallRiddle/SmallRiddle'
+import Riddle from '../components/Riddle/Riddle'
 
 export default class AcertijosView extends Component {
   constructor(props){

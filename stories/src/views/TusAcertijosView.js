@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
-import SmallRiddle from '../components/SmallRiddle'
-import PuntuarSolucion from '../components/PuntuarSolucion'
+import SmallRiddle from '../components/SmallRiddle/SmallRiddle'
+import PuntuarSolucion from '../components/PuntuarSolucion/PuntuarSolucion'
 
 export default class TusAcertijosView extends Component {
   constructor(props){

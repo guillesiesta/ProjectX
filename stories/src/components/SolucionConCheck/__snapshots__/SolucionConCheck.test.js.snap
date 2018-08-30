@@ -1,0 +1,784 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SolucionConCheck Rendering the simple component 1`] = `
+ShallowWrapper {
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <SolucionConCheck />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": <div
+        className="row"
+      >
+        <form>
+          <li
+            className="list-group-item"
+          >
+            Solución: 
+            <strong />
+             y Puntuacion ACTUAL: 
+            <strong>
+               %
+            </strong>
+            <select
+              className="form-control"
+              id="sel1"
+              onChange={[Function]}
+            >
+              <option
+                value="-"
+              >
+                -
+              </option>
+              <option
+                value="25"
+              >
+                25%
+              </option>
+              <option
+                value="50"
+              >
+                50%
+              </option>
+              <option
+                value="75"
+              >
+                75%
+              </option>
+              <option
+                value="100"
+              >
+                100%
+              </option>
+            </select>
+          </li>
+          <input
+            onClick={[Function]}
+            type="button"
+            value="Cambiar puntuacion"
+          />
+        </form>
+      </div>,
+      "className": "box-header with-border",
+    },
+    "ref": null,
+    "rendered": Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": <form>
+          <li
+            className="list-group-item"
+          >
+            Solución: 
+            <strong />
+             y Puntuacion ACTUAL: 
+            <strong>
+               %
+            </strong>
+            <select
+              className="form-control"
+              id="sel1"
+              onChange={[Function]}
+            >
+              <option
+                value="-"
+              >
+                -
+              </option>
+              <option
+                value="25"
+              >
+                25%
+              </option>
+              <option
+                value="50"
+              >
+                50%
+              </option>
+              <option
+                value="75"
+              >
+                75%
+              </option>
+              <option
+                value="100"
+              >
+                100%
+              </option>
+            </select>
+          </li>
+          <input
+            onClick={[Function]}
+            type="button"
+            value="Cambiar puntuacion"
+          />
+        </form>,
+        "className": "row",
+      },
+      "ref": null,
+      "rendered": Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            <li
+              className="list-group-item"
+            >
+              Solución: 
+              <strong />
+               y Puntuacion ACTUAL: 
+              <strong>
+                 %
+              </strong>
+              <select
+                className="form-control"
+                id="sel1"
+                onChange={[Function]}
+              >
+                <option
+                  value="-"
+                >
+                  -
+                </option>
+                <option
+                  value="25"
+                >
+                  25%
+                </option>
+                <option
+                  value="50"
+                >
+                  50%
+                </option>
+                <option
+                  value="75"
+                >
+                  75%
+                </option>
+                <option
+                  value="100"
+                >
+                  100%
+                </option>
+              </select>
+            </li>,
+            <input
+              onClick={[Function]}
+              type="button"
+              value="Cambiar puntuacion"
+            />,
+          ],
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": Array [
+                "Solución: ",
+                <strong />,
+                " y Puntuacion ACTUAL: ",
+                <strong>
+                   %
+                </strong>,
+                <select
+                  className="form-control"
+                  id="sel1"
+                  onChange={[Function]}
+                >
+                  <option
+                    value="-"
+                  >
+                    -
+                  </option>
+                  <option
+                    value="25"
+                  >
+                    25%
+                  </option>
+                  <option
+                    value="50"
+                  >
+                    50%
+                  </option>
+                  <option
+                    value="75"
+                  >
+                    75%
+                  </option>
+                  <option
+                    value="100"
+                  >
+                    100%
+                  </option>
+                </select>,
+              ],
+              "className": "list-group-item",
+            },
+            "ref": null,
+            "rendered": Array [
+              "Solución: ",
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": undefined,
+                },
+                "ref": null,
+                "rendered": null,
+                "type": "strong",
+              },
+              " y Puntuacion ACTUAL: ",
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": Array [
+                    undefined,
+                    " %",
+                  ],
+                },
+                "ref": null,
+                "rendered": Array [
+                  undefined,
+                  " %",
+                ],
+                "type": "strong",
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": Array [
+                    <option
+                      value="-"
+                    >
+                      -
+                    </option>,
+                    <option
+                      value="25"
+                    >
+                      25%
+                    </option>,
+                    <option
+                      value="50"
+                    >
+                      50%
+                    </option>,
+                    <option
+                      value="75"
+                    >
+                      75%
+                    </option>,
+                    <option
+                      value="100"
+                    >
+                      100%
+                    </option>,
+                  ],
+                  "className": "form-control",
+                  "id": "sel1",
+                  "onChange": [Function],
+                },
+                "ref": null,
+                "rendered": Array [
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": "-",
+                      "value": "-",
+                    },
+                    "ref": null,
+                    "rendered": "-",
+                    "type": "option",
+                  },
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": "25%",
+                      "value": "25",
+                    },
+                    "ref": null,
+                    "rendered": "25%",
+                    "type": "option",
+                  },
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": "50%",
+                      "value": "50",
+                    },
+                    "ref": null,
+                    "rendered": "50%",
+                    "type": "option",
+                  },
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": "75%",
+                      "value": "75",
+                    },
+                    "ref": null,
+                    "rendered": "75%",
+                    "type": "option",
+                  },
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": "100%",
+                      "value": "100",
+                    },
+                    "ref": null,
+                    "rendered": "100%",
+                    "type": "option",
+                  },
+                ],
+                "type": "select",
+              },
+            ],
+            "type": "li",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "onClick": [Function],
+              "type": "button",
+              "value": "Cambiar puntuacion",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": "input",
+          },
+        ],
+        "type": "form",
+      },
+      "type": "div",
+    },
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": <div
+          className="row"
+        >
+          <form>
+            <li
+              className="list-group-item"
+            >
+              Solución: 
+              <strong />
+               y Puntuacion ACTUAL: 
+              <strong>
+                 %
+              </strong>
+              <select
+                className="form-control"
+                id="sel1"
+                onChange={[Function]}
+              >
+                <option
+                  value="-"
+                >
+                  -
+                </option>
+                <option
+                  value="25"
+                >
+                  25%
+                </option>
+                <option
+                  value="50"
+                >
+                  50%
+                </option>
+                <option
+                  value="75"
+                >
+                  75%
+                </option>
+                <option
+                  value="100"
+                >
+                  100%
+                </option>
+              </select>
+            </li>
+            <input
+              onClick={[Function]}
+              type="button"
+              value="Cambiar puntuacion"
+            />
+          </form>
+        </div>,
+        "className": "box-header with-border",
+      },
+      "ref": null,
+      "rendered": Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": <form>
+            <li
+              className="list-group-item"
+            >
+              Solución: 
+              <strong />
+               y Puntuacion ACTUAL: 
+              <strong>
+                 %
+              </strong>
+              <select
+                className="form-control"
+                id="sel1"
+                onChange={[Function]}
+              >
+                <option
+                  value="-"
+                >
+                  -
+                </option>
+                <option
+                  value="25"
+                >
+                  25%
+                </option>
+                <option
+                  value="50"
+                >
+                  50%
+                </option>
+                <option
+                  value="75"
+                >
+                  75%
+                </option>
+                <option
+                  value="100"
+                >
+                  100%
+                </option>
+              </select>
+            </li>
+            <input
+              onClick={[Function]}
+              type="button"
+              value="Cambiar puntuacion"
+            />
+          </form>,
+          "className": "row",
+        },
+        "ref": null,
+        "rendered": Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              <li
+                className="list-group-item"
+              >
+                Solución: 
+                <strong />
+                 y Puntuacion ACTUAL: 
+                <strong>
+                   %
+                </strong>
+                <select
+                  className="form-control"
+                  id="sel1"
+                  onChange={[Function]}
+                >
+                  <option
+                    value="-"
+                  >
+                    -
+                  </option>
+                  <option
+                    value="25"
+                  >
+                    25%
+                  </option>
+                  <option
+                    value="50"
+                  >
+                    50%
+                  </option>
+                  <option
+                    value="75"
+                  >
+                    75%
+                  </option>
+                  <option
+                    value="100"
+                  >
+                    100%
+                  </option>
+                </select>
+              </li>,
+              <input
+                onClick={[Function]}
+                type="button"
+                value="Cambiar puntuacion"
+              />,
+            ],
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": Array [
+                  "Solución: ",
+                  <strong />,
+                  " y Puntuacion ACTUAL: ",
+                  <strong>
+                     %
+                  </strong>,
+                  <select
+                    className="form-control"
+                    id="sel1"
+                    onChange={[Function]}
+                  >
+                    <option
+                      value="-"
+                    >
+                      -
+                    </option>
+                    <option
+                      value="25"
+                    >
+                      25%
+                    </option>
+                    <option
+                      value="50"
+                    >
+                      50%
+                    </option>
+                    <option
+                      value="75"
+                    >
+                      75%
+                    </option>
+                    <option
+                      value="100"
+                    >
+                      100%
+                    </option>
+                  </select>,
+                ],
+                "className": "list-group-item",
+              },
+              "ref": null,
+              "rendered": Array [
+                "Solución: ",
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": undefined,
+                  },
+                  "ref": null,
+                  "rendered": null,
+                  "type": "strong",
+                },
+                " y Puntuacion ACTUAL: ",
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": Array [
+                      undefined,
+                      " %",
+                    ],
+                  },
+                  "ref": null,
+                  "rendered": Array [
+                    undefined,
+                    " %",
+                  ],
+                  "type": "strong",
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": Array [
+                      <option
+                        value="-"
+                      >
+                        -
+                      </option>,
+                      <option
+                        value="25"
+                      >
+                        25%
+                      </option>,
+                      <option
+                        value="50"
+                      >
+                        50%
+                      </option>,
+                      <option
+                        value="75"
+                      >
+                        75%
+                      </option>,
+                      <option
+                        value="100"
+                      >
+                        100%
+                      </option>,
+                    ],
+                    "className": "form-control",
+                    "id": "sel1",
+                    "onChange": [Function],
+                  },
+                  "ref": null,
+                  "rendered": Array [
+                    Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "host",
+                      "props": Object {
+                        "children": "-",
+                        "value": "-",
+                      },
+                      "ref": null,
+                      "rendered": "-",
+                      "type": "option",
+                    },
+                    Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "host",
+                      "props": Object {
+                        "children": "25%",
+                        "value": "25",
+                      },
+                      "ref": null,
+                      "rendered": "25%",
+                      "type": "option",
+                    },
+                    Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "host",
+                      "props": Object {
+                        "children": "50%",
+                        "value": "50",
+                      },
+                      "ref": null,
+                      "rendered": "50%",
+                      "type": "option",
+                    },
+                    Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "host",
+                      "props": Object {
+                        "children": "75%",
+                        "value": "75",
+                      },
+                      "ref": null,
+                      "rendered": "75%",
+                      "type": "option",
+                    },
+                    Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "host",
+                      "props": Object {
+                        "children": "100%",
+                        "value": "100",
+                      },
+                      "ref": null,
+                      "rendered": "100%",
+                      "type": "option",
+                    },
+                  ],
+                  "type": "select",
+                },
+              ],
+              "type": "li",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "onClick": [Function],
+                "type": "button",
+                "value": "Cambiar puntuacion",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": "input",
+            },
+          ],
+          "type": "form",
+        },
+        "type": "div",
+      },
+      "type": "div",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+        "lifecycles": Object {
+          "componentDidUpdate": Object {
+            "onSetState": true,
+          },
+          "getDerivedStateFromProps": true,
+          "getSnapshotBeforeUpdate": true,
+          "setState": Object {
+            "skipsComponentDidUpdateOnNullish": true,
+          },
+        },
+      },
+    },
+    "attachTo": undefined,
+    "hydrateIn": undefined,
+  },
+}
+`;

@@ -1,0 +1,1162 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SideBar Rendering the simple component 1`] = `
+ShallowWrapper {
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <SideBar />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": <section
+        className="sidebar"
+      >
+        <div
+          className="user-panel"
+        >
+          <div
+            className="pull-left image"
+          >
+            <img
+              alt="avatar"
+              className="img-circle"
+              src="img/avatar6.png"
+            />
+          </div>
+          <div
+            className="pull-left info"
+          >
+            <p />
+            <i
+              className="fa fa-circle text-success"
+            />
+             Online
+          </div>
+        </div>
+        <ul
+          className="sidebar-menu"
+          data-widget="tree"
+        >
+          <li
+            className="header"
+          >
+            DETECTIVE
+          </li>
+          <button
+            className="btn btn-primary btn-block"
+            onClick={[Function]}
+          >
+            <span>
+              Resolver Acertijo
+            </span>
+          </button>
+          <li>
+            <button
+              className="btn btn-primary btn-block"
+              onClick={[Function]}
+            >
+              <span>
+                Proponer Acertijo
+              </span>
+            </button>
+          </li>
+          <li>
+            <button
+              className="btn btn-primary btn-block"
+              onClick={[Function]}
+            >
+              <span>
+                Tus Acertijos
+              </span>
+            </button>
+          </li>
+          <li>
+            <button
+              className="btn btn-primary btn-block"
+              onClick={[Function]}
+            >
+              <span>
+                Editar Perfil
+              </span>
+            </button>
+          </li>
+          <li>
+            <button
+              className="btn btn-danger btn-block"
+              onClick={[Function]}
+            >
+              <span>
+                Logout
+              </span>
+            </button>
+          </li>
+        </ul>
+      </section>,
+      "className": "main-sidebar",
+    },
+    "ref": null,
+    "rendered": Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <div
+            className="user-panel"
+          >
+            <div
+              className="pull-left image"
+            >
+              <img
+                alt="avatar"
+                className="img-circle"
+                src="img/avatar6.png"
+              />
+            </div>
+            <div
+              className="pull-left info"
+            >
+              <p />
+              <i
+                className="fa fa-circle text-success"
+              />
+               Online
+            </div>
+          </div>,
+          <ul
+            className="sidebar-menu"
+            data-widget="tree"
+          >
+            <li
+              className="header"
+            >
+              DETECTIVE
+            </li>
+            <button
+              className="btn btn-primary btn-block"
+              onClick={[Function]}
+            >
+              <span>
+                Resolver Acertijo
+              </span>
+            </button>
+            <li>
+              <button
+                className="btn btn-primary btn-block"
+                onClick={[Function]}
+              >
+                <span>
+                  Proponer Acertijo
+                </span>
+              </button>
+            </li>
+            <li>
+              <button
+                className="btn btn-primary btn-block"
+                onClick={[Function]}
+              >
+                <span>
+                  Tus Acertijos
+                </span>
+              </button>
+            </li>
+            <li>
+              <button
+                className="btn btn-primary btn-block"
+                onClick={[Function]}
+              >
+                <span>
+                  Editar Perfil
+                </span>
+              </button>
+            </li>
+            <li>
+              <button
+                className="btn btn-danger btn-block"
+                onClick={[Function]}
+              >
+                <span>
+                  Logout
+                </span>
+              </button>
+            </li>
+          </ul>,
+        ],
+        "className": "sidebar",
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              <div
+                className="pull-left image"
+              >
+                <img
+                  alt="avatar"
+                  className="img-circle"
+                  src="img/avatar6.png"
+                />
+              </div>,
+              <div
+                className="pull-left info"
+              >
+                <p />
+                <i
+                  className="fa fa-circle text-success"
+                />
+                 Online
+              </div>,
+            ],
+            "className": "user-panel",
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": <img
+                  alt="avatar"
+                  className="img-circle"
+                  src="img/avatar6.png"
+                />,
+                "className": "pull-left image",
+              },
+              "ref": null,
+              "rendered": Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "alt": "avatar",
+                  "className": "img-circle",
+                  "src": "img/avatar6.png",
+                },
+                "ref": null,
+                "rendered": null,
+                "type": "img",
+              },
+              "type": "div",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": Array [
+                  <p />,
+                  <i
+                    className="fa fa-circle text-success"
+                  />,
+                  " Online",
+                ],
+                "className": "pull-left info",
+              },
+              "ref": null,
+              "rendered": Array [
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": undefined,
+                  },
+                  "ref": null,
+                  "rendered": null,
+                  "type": "p",
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "className": "fa fa-circle text-success",
+                  },
+                  "ref": null,
+                  "rendered": null,
+                  "type": "i",
+                },
+                " Online",
+              ],
+              "type": "div",
+            },
+          ],
+          "type": "div",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              <li
+                className="header"
+              >
+                DETECTIVE
+              </li>,
+              <button
+                className="btn btn-primary btn-block"
+                onClick={[Function]}
+              >
+                <span>
+                  Resolver Acertijo
+                </span>
+              </button>,
+              <li>
+                <button
+                  className="btn btn-primary btn-block"
+                  onClick={[Function]}
+                >
+                  <span>
+                    Proponer Acertijo
+                  </span>
+                </button>
+              </li>,
+              <li>
+                <button
+                  className="btn btn-primary btn-block"
+                  onClick={[Function]}
+                >
+                  <span>
+                    Tus Acertijos
+                  </span>
+                </button>
+              </li>,
+              <li>
+                <button
+                  className="btn btn-primary btn-block"
+                  onClick={[Function]}
+                >
+                  <span>
+                    Editar Perfil
+                  </span>
+                </button>
+              </li>,
+              <li>
+                <button
+                  className="btn btn-danger btn-block"
+                  onClick={[Function]}
+                >
+                  <span>
+                    Logout
+                  </span>
+                </button>
+              </li>,
+            ],
+            "className": "sidebar-menu",
+            "data-widget": "tree",
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "DETECTIVE",
+                "className": "header",
+              },
+              "ref": null,
+              "rendered": "DETECTIVE",
+              "type": "li",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": <span>
+                  Resolver Acertijo
+                </span>,
+                "className": "btn btn-primary btn-block",
+                "onClick": [Function],
+              },
+              "ref": null,
+              "rendered": Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": "Resolver Acertijo",
+                },
+                "ref": null,
+                "rendered": "Resolver Acertijo",
+                "type": "span",
+              },
+              "type": "button",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": <button
+                  className="btn btn-primary btn-block"
+                  onClick={[Function]}
+                >
+                  <span>
+                    Proponer Acertijo
+                  </span>
+                </button>,
+              },
+              "ref": null,
+              "rendered": Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": <span>
+                    Proponer Acertijo
+                  </span>,
+                  "className": "btn btn-primary btn-block",
+                  "onClick": [Function],
+                },
+                "ref": null,
+                "rendered": Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": "Proponer Acertijo",
+                  },
+                  "ref": null,
+                  "rendered": "Proponer Acertijo",
+                  "type": "span",
+                },
+                "type": "button",
+              },
+              "type": "li",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": <button
+                  className="btn btn-primary btn-block"
+                  onClick={[Function]}
+                >
+                  <span>
+                    Tus Acertijos
+                  </span>
+                </button>,
+              },
+              "ref": null,
+              "rendered": Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": <span>
+                    Tus Acertijos
+                  </span>,
+                  "className": "btn btn-primary btn-block",
+                  "onClick": [Function],
+                },
+                "ref": null,
+                "rendered": Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": "Tus Acertijos",
+                  },
+                  "ref": null,
+                  "rendered": "Tus Acertijos",
+                  "type": "span",
+                },
+                "type": "button",
+              },
+              "type": "li",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": <button
+                  className="btn btn-primary btn-block"
+                  onClick={[Function]}
+                >
+                  <span>
+                    Editar Perfil
+                  </span>
+                </button>,
+              },
+              "ref": null,
+              "rendered": Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": <span>
+                    Editar Perfil
+                  </span>,
+                  "className": "btn btn-primary btn-block",
+                  "onClick": [Function],
+                },
+                "ref": null,
+                "rendered": Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": "Editar Perfil",
+                  },
+                  "ref": null,
+                  "rendered": "Editar Perfil",
+                  "type": "span",
+                },
+                "type": "button",
+              },
+              "type": "li",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": <button
+                  className="btn btn-danger btn-block"
+                  onClick={[Function]}
+                >
+                  <span>
+                    Logout
+                  </span>
+                </button>,
+              },
+              "ref": null,
+              "rendered": Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": <span>
+                    Logout
+                  </span>,
+                  "className": "btn btn-danger btn-block",
+                  "onClick": [Function],
+                },
+                "ref": null,
+                "rendered": Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": "Logout",
+                  },
+                  "ref": null,
+                  "rendered": "Logout",
+                  "type": "span",
+                },
+                "type": "button",
+              },
+              "type": "li",
+            },
+          ],
+          "type": "ul",
+        },
+      ],
+      "type": "section",
+    },
+    "type": "aside",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": <section
+          className="sidebar"
+        >
+          <div
+            className="user-panel"
+          >
+            <div
+              className="pull-left image"
+            >
+              <img
+                alt="avatar"
+                className="img-circle"
+                src="img/avatar6.png"
+              />
+            </div>
+            <div
+              className="pull-left info"
+            >
+              <p />
+              <i
+                className="fa fa-circle text-success"
+              />
+               Online
+            </div>
+          </div>
+          <ul
+            className="sidebar-menu"
+            data-widget="tree"
+          >
+            <li
+              className="header"
+            >
+              DETECTIVE
+            </li>
+            <button
+              className="btn btn-primary btn-block"
+              onClick={[Function]}
+            >
+              <span>
+                Resolver Acertijo
+              </span>
+            </button>
+            <li>
+              <button
+                className="btn btn-primary btn-block"
+                onClick={[Function]}
+              >
+                <span>
+                  Proponer Acertijo
+                </span>
+              </button>
+            </li>
+            <li>
+              <button
+                className="btn btn-primary btn-block"
+                onClick={[Function]}
+              >
+                <span>
+                  Tus Acertijos
+                </span>
+              </button>
+            </li>
+            <li>
+              <button
+                className="btn btn-primary btn-block"
+                onClick={[Function]}
+              >
+                <span>
+                  Editar Perfil
+                </span>
+              </button>
+            </li>
+            <li>
+              <button
+                className="btn btn-danger btn-block"
+                onClick={[Function]}
+              >
+                <span>
+                  Logout
+                </span>
+              </button>
+            </li>
+          </ul>
+        </section>,
+        "className": "main-sidebar",
+      },
+      "ref": null,
+      "rendered": Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            <div
+              className="user-panel"
+            >
+              <div
+                className="pull-left image"
+              >
+                <img
+                  alt="avatar"
+                  className="img-circle"
+                  src="img/avatar6.png"
+                />
+              </div>
+              <div
+                className="pull-left info"
+              >
+                <p />
+                <i
+                  className="fa fa-circle text-success"
+                />
+                 Online
+              </div>
+            </div>,
+            <ul
+              className="sidebar-menu"
+              data-widget="tree"
+            >
+              <li
+                className="header"
+              >
+                DETECTIVE
+              </li>
+              <button
+                className="btn btn-primary btn-block"
+                onClick={[Function]}
+              >
+                <span>
+                  Resolver Acertijo
+                </span>
+              </button>
+              <li>
+                <button
+                  className="btn btn-primary btn-block"
+                  onClick={[Function]}
+                >
+                  <span>
+                    Proponer Acertijo
+                  </span>
+                </button>
+              </li>
+              <li>
+                <button
+                  className="btn btn-primary btn-block"
+                  onClick={[Function]}
+                >
+                  <span>
+                    Tus Acertijos
+                  </span>
+                </button>
+              </li>
+              <li>
+                <button
+                  className="btn btn-primary btn-block"
+                  onClick={[Function]}
+                >
+                  <span>
+                    Editar Perfil
+                  </span>
+                </button>
+              </li>
+              <li>
+                <button
+                  className="btn btn-danger btn-block"
+                  onClick={[Function]}
+                >
+                  <span>
+                    Logout
+                  </span>
+                </button>
+              </li>
+            </ul>,
+          ],
+          "className": "sidebar",
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": Array [
+                <div
+                  className="pull-left image"
+                >
+                  <img
+                    alt="avatar"
+                    className="img-circle"
+                    src="img/avatar6.png"
+                  />
+                </div>,
+                <div
+                  className="pull-left info"
+                >
+                  <p />
+                  <i
+                    className="fa fa-circle text-success"
+                  />
+                   Online
+                </div>,
+              ],
+              "className": "user-panel",
+            },
+            "ref": null,
+            "rendered": Array [
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": <img
+                    alt="avatar"
+                    className="img-circle"
+                    src="img/avatar6.png"
+                  />,
+                  "className": "pull-left image",
+                },
+                "ref": null,
+                "rendered": Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "alt": "avatar",
+                    "className": "img-circle",
+                    "src": "img/avatar6.png",
+                  },
+                  "ref": null,
+                  "rendered": null,
+                  "type": "img",
+                },
+                "type": "div",
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": Array [
+                    <p />,
+                    <i
+                      className="fa fa-circle text-success"
+                    />,
+                    " Online",
+                  ],
+                  "className": "pull-left info",
+                },
+                "ref": null,
+                "rendered": Array [
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": undefined,
+                    },
+                    "ref": null,
+                    "rendered": null,
+                    "type": "p",
+                  },
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "className": "fa fa-circle text-success",
+                    },
+                    "ref": null,
+                    "rendered": null,
+                    "type": "i",
+                  },
+                  " Online",
+                ],
+                "type": "div",
+              },
+            ],
+            "type": "div",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": Array [
+                <li
+                  className="header"
+                >
+                  DETECTIVE
+                </li>,
+                <button
+                  className="btn btn-primary btn-block"
+                  onClick={[Function]}
+                >
+                  <span>
+                    Resolver Acertijo
+                  </span>
+                </button>,
+                <li>
+                  <button
+                    className="btn btn-primary btn-block"
+                    onClick={[Function]}
+                  >
+                    <span>
+                      Proponer Acertijo
+                    </span>
+                  </button>
+                </li>,
+                <li>
+                  <button
+                    className="btn btn-primary btn-block"
+                    onClick={[Function]}
+                  >
+                    <span>
+                      Tus Acertijos
+                    </span>
+                  </button>
+                </li>,
+                <li>
+                  <button
+                    className="btn btn-primary btn-block"
+                    onClick={[Function]}
+                  >
+                    <span>
+                      Editar Perfil
+                    </span>
+                  </button>
+                </li>,
+                <li>
+                  <button
+                    className="btn btn-danger btn-block"
+                    onClick={[Function]}
+                  >
+                    <span>
+                      Logout
+                    </span>
+                  </button>
+                </li>,
+              ],
+              "className": "sidebar-menu",
+              "data-widget": "tree",
+            },
+            "ref": null,
+            "rendered": Array [
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": "DETECTIVE",
+                  "className": "header",
+                },
+                "ref": null,
+                "rendered": "DETECTIVE",
+                "type": "li",
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": <span>
+                    Resolver Acertijo
+                  </span>,
+                  "className": "btn btn-primary btn-block",
+                  "onClick": [Function],
+                },
+                "ref": null,
+                "rendered": Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": "Resolver Acertijo",
+                  },
+                  "ref": null,
+                  "rendered": "Resolver Acertijo",
+                  "type": "span",
+                },
+                "type": "button",
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": <button
+                    className="btn btn-primary btn-block"
+                    onClick={[Function]}
+                  >
+                    <span>
+                      Proponer Acertijo
+                    </span>
+                  </button>,
+                },
+                "ref": null,
+                "rendered": Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": <span>
+                      Proponer Acertijo
+                    </span>,
+                    "className": "btn btn-primary btn-block",
+                    "onClick": [Function],
+                  },
+                  "ref": null,
+                  "rendered": Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": "Proponer Acertijo",
+                    },
+                    "ref": null,
+                    "rendered": "Proponer Acertijo",
+                    "type": "span",
+                  },
+                  "type": "button",
+                },
+                "type": "li",
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": <button
+                    className="btn btn-primary btn-block"
+                    onClick={[Function]}
+                  >
+                    <span>
+                      Tus Acertijos
+                    </span>
+                  </button>,
+                },
+                "ref": null,
+                "rendered": Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": <span>
+                      Tus Acertijos
+                    </span>,
+                    "className": "btn btn-primary btn-block",
+                    "onClick": [Function],
+                  },
+                  "ref": null,
+                  "rendered": Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": "Tus Acertijos",
+                    },
+                    "ref": null,
+                    "rendered": "Tus Acertijos",
+                    "type": "span",
+                  },
+                  "type": "button",
+                },
+                "type": "li",
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": <button
+                    className="btn btn-primary btn-block"
+                    onClick={[Function]}
+                  >
+                    <span>
+                      Editar Perfil
+                    </span>
+                  </button>,
+                },
+                "ref": null,
+                "rendered": Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": <span>
+                      Editar Perfil
+                    </span>,
+                    "className": "btn btn-primary btn-block",
+                    "onClick": [Function],
+                  },
+                  "ref": null,
+                  "rendered": Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": "Editar Perfil",
+                    },
+                    "ref": null,
+                    "rendered": "Editar Perfil",
+                    "type": "span",
+                  },
+                  "type": "button",
+                },
+                "type": "li",
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": <button
+                    className="btn btn-danger btn-block"
+                    onClick={[Function]}
+                  >
+                    <span>
+                      Logout
+                    </span>
+                  </button>,
+                },
+                "ref": null,
+                "rendered": Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": <span>
+                      Logout
+                    </span>,
+                    "className": "btn btn-danger btn-block",
+                    "onClick": [Function],
+                  },
+                  "ref": null,
+                  "rendered": Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": "Logout",
+                    },
+                    "ref": null,
+                    "rendered": "Logout",
+                    "type": "span",
+                  },
+                  "type": "button",
+                },
+                "type": "li",
+              },
+            ],
+            "type": "ul",
+          },
+        ],
+        "type": "section",
+      },
+      "type": "aside",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+        "lifecycles": Object {
+          "componentDidUpdate": Object {
+            "onSetState": true,
+          },
+          "getDerivedStateFromProps": true,
+          "getSnapshotBeforeUpdate": true,
+          "setState": Object {
+            "skipsComponentDidUpdateOnNullish": true,
+          },
+        },
+      },
+    },
+    "attachTo": undefined,
+    "hydrateIn": undefined,
+  },
+}
+`;

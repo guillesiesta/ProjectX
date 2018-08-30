@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import Solucion from '../components/Solucion'
+import Solucion from '../Solucion/Solucion'
 
 export default class Riddle extends Component {
 
