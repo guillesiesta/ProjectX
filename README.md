@@ -30,7 +30,6 @@ Despliegue https://projectxguillesiesta.herokuapp.com/
 ![docker](imgs/cloud_linked_2.png)
 ![docker](imgs/linked_cloud_3.png)
 
-[Enlace a DockerHub](https://hub.docker.com/r/guillesiesta/projectx/)
 
 Enlace del repositorio en Docker Hub:  https://hub.docker.com/r/guillesiesta/projectx/
 
