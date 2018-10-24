@@ -81,7 +81,7 @@ Para Ansible:
 
 Para crear la máquina virtual
 
-vagrant up --provider=azure
+`vagrant up --provider=azure`
 
 ![azure](imgs/azure4.png)
 
