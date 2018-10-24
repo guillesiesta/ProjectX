@@ -40,7 +40,7 @@ Enlace del repositorio en Docker Hub:  https://hub.docker.com/r/guillesiesta/pro
 
 2.- Descargo now: npm install -g now
 
-3.-Me voy a la carpeta donde tengo mi proyecto y ejecuto: now --public
+3.- Me voy a la carpeta donde tengo mi proyecto y ejecuto: now --public
 
 Contenedor: https://projectx-ppcjlcvsoh.now.sh/
 
@@ -95,7 +95,7 @@ Aquí la máquina virtual final:
 
 Para el despliegue voy a usar Fabric
 
-El comando usado es: fab -H usuario@DNS funcion
+El comando usado es: `fab -H usuario@DNS funcion`
 
 Aquí el archivo [fabfile.py](https://github.com/guillesiesta/ProjectX/blob/master/fabfile.py)
 
