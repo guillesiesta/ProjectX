@@ -36,11 +36,11 @@ Enlace del repositorio en Docker Hub:  https://hub.docker.com/r/guillesiesta/pro
 
 ### Despliegue en Zeit
 
-Instalo [nvm](https://www.liquidweb.com/kb/how-to-install-nvm-node-version-manager-for-node-js-on-ubuntu-12-04-lts/)
+1.- Instalo [nvm](https://www.liquidweb.com/kb/how-to-install-nvm-node-version-manager-for-node-js-on-ubuntu-12-04-lts/)
 
-Descargo now: npm install -g now
+2.- Descargo now: npm install -g now
 
-Me voy a la carpeta donde tengo mi proyecto y ejecuto: now --public
+3.-Me voy a la carpeta donde tengo mi proyecto y ejecuto: now --public
 
 Contenedor: https://projectx-ppcjlcvsoh.now.sh/
 
